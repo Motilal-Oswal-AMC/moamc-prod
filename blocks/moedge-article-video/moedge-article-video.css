@@ -260,15 +260,4 @@
     font-size: var(--paragraph-small-size);
     line-height: var(--paragraph-small-line-height);
   }
-}
-.moedge-article-video-wrapper .moedge-article-video .mainarticle3 p.itemsubart3 {
-  margin: 0;
-  padding: 24px 0;
-  color: #3D3D3D;
-  font-feature-settings: "ss01" on, "ss04" on, "cv01" on, "cv02" on, "cv03" on, "cv04" on, "cv06" on, "cv09" on, "cv10" on, "cv11" on;
-  font-family: var(--body, Inter);
-  font-size: var(--body-medium-regular-size, 16px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--body-medium-regular-line-height, 24px);
 }/*# sourceMappingURL=moedge-article-video.css.map */

@@ -33,7 +33,9 @@
         h6 {
             text-align: left;
             margin: 0;
-            margin-bottom: -30px;
+            margin-bottom: 24px;
+
+            // margin-bottom: -30px;
             color: #2E2A94;
             font-feature-settings: 'ss01'on, 'ss04'on, 'cv01'on, 'cv02'on, 'cv03'on, 'cv04'on, 'cv06'on, 'cv09'on, 'cv10'on, 'cv11'on;
             font-family: var(--title);
@@ -52,11 +54,13 @@
 
     .tabs {
         .tabs-list {
-            display: flex;
-            justify-content: flex-end;
-            gap: var(--spacing-unit);
-            border: none;
-            margin-bottom: 40px;
+            // display: flex;
+            // justify-content: flex-end;
+            // gap: var(--spacing-unit);
+            // border: none;
+            // margin-bottom: 40px;
+            display: none;
+
 
             @include media(mobile) {
                 justify-content: flex-start;
@@ -294,18 +298,18 @@
         >ul {
             // padding: 0;
 
-            li:nth-child(1) {
-                background-color: transparent;
-                border-radius: var(--border-radius-8, 8px);
-                border: 1px solid var(--button-primary-default, #2E2A94);
+            // li:nth-child(1) {
+            //     background-color: transparent;
+            //     border-radius: var(--border-radius-8, 8px);
+            //     border: 1px solid var(--button-primary-default, #2E2A94);
 
-                a {
-                    background-color: transparent;
-                    color: var(--button-primary-default);
-                }
-            }
+            //     a {
+            //         background-color: transparent;
+            //         color: var(--button-primary-default);
+            //     }
+            // }
 
-            li:nth-child(2) {
+            li {
                 display: flex;
                 border-radius: var(--border-radius-8);
 

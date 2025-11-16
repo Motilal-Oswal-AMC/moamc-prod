@@ -167,66 +167,68 @@
                     }
 
                     .our-expert-sub2 {
-                        display: flex;
-                        align-items: center;
-                        gap: 8px;
+                        display: none;
+                        
+                        // display: flex;
+                        // align-items: center;
+                        // gap: 8px;
 
-                        @include media(mobile) {
-                            max-width: 350px;
-                            width: 100%;
-                            overflow: auto;
-                        }
+                        // @include media(mobile) {
+                        //     max-width: 350px;
+                        //     width: 100%;
+                        //     overflow: auto;
+                        // }
 
-                        .expert-lists1 {
-                            display: flex;
-                            align-items: center;
-                            gap: 4px;
-                            color: var(--neutrals-black);
-                            font-feature-settings: var(--font-features-default);
-                            font-family: var(--body);
-                            font-size: var(--body-small-medium-size);
-                            font-style: normal;
-                            font-weight: 500;
-                            line-height: var(--body-small-medium-line-height);
+                        // .expert-lists1 {
+                        //     display: flex;
+                        //     align-items: center;
+                        //     gap: 4px;
+                        //     color: var(--neutrals-black);
+                        //     font-feature-settings: var(--font-features-default);
+                        //     font-family: var(--body);
+                        //     font-size: var(--body-small-medium-size);
+                        //     font-style: normal;
+                        //     font-weight: 500;
+                        //     line-height: var(--body-small-medium-line-height);
 
-                            .icon {
-                                width: 16px;
-                                height: 16px;
-                                aspect-ratio: 1/1;
-                            }
-                        }
+                        //     .icon {
+                        //         width: 16px;
+                        //         height: 16px;
+                        //         aspect-ratio: 1/1;
+                        //     }
+                        // }
 
-                        li {
-                            display: flex;
-                            align-items: center;
-                            gap: 8px;
+                        // li {
+                        //     display: flex;
+                        //     align-items: center;
+                        //     gap: 8px;
 
-                            a {
-                                color: #2E2A94;
-                                font-feature-settings: var(--font-features-default);
-                                font-family: var(--body);
-                                font-size: var(--text-link-xsmall-size);
-                                font-style: normal;
-                                font-weight: 400;
-                                line-height: var(--text-link-xsmall-line-height, 16px);
-                                text-decoration-line: underline;
-                                text-decoration-style: solid;
-                                text-decoration-skip-ink: auto;
-                                text-decoration-thickness: auto;
-                                text-underline-offset: 4.9%;
-                                text-underline-position: from-font;
-                                white-space: nowrap;
+                        //     a {
+                        //         color: #2E2A94;
+                        //         font-feature-settings: var(--font-features-default);
+                        //         font-family: var(--body);
+                        //         font-size: var(--text-link-xsmall-size);
+                        //         font-style: normal;
+                        //         font-weight: 400;
+                        //         line-height: var(--text-link-xsmall-line-height, 16px);
+                        //         text-decoration-line: underline;
+                        //         text-decoration-style: solid;
+                        //         text-decoration-skip-ink: auto;
+                        //         text-decoration-thickness: auto;
+                        //         text-underline-offset: 4.9%;
+                        //         text-underline-position: from-font;
+                        //         white-space: nowrap;
 
-                                @include media (mobile) {
-                                    font-size: var(--text-link-small-size);
-                                    line-height: var(--text-link-small-line-height);
-                                }
-                            }
-                        }
+                        //         @include media (mobile) {
+                        //             font-size: var(--text-link-small-size);
+                        //             line-height: var(--text-link-small-line-height);
+                        //         }
+                        //     }
+                        // }
 
-                        .expert-lists2 {
-                            padding-right: 8px;
-                        }
+                        // .expert-lists2 {
+                        //     padding-right: 8px;
+                        // }
                     }
 
                     .our-expert-sub3 {
@@ -281,6 +283,7 @@
                             }
                         }
                     }
+
                     .search-results.dsp-none {
                         display: none;
                     }

@@ -165,64 +165,7 @@
   border: 2px solid #2E2A94;
 }
 .section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-@media (max-width: 768px) {
-  .section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 {
-    max-width: 350px;
-    width: 100%;
-    overflow: auto;
-  }
-}
-.section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 .expert-lists1 {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--neutrals-black);
-  font-feature-settings: var(--font-features-default);
-  font-family: var(--body);
-  font-size: var(--body-small-medium-size);
-  font-style: normal;
-  font-weight: 500;
-  line-height: var(--body-small-medium-line-height);
-}
-.section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 .expert-lists1 .icon {
-  width: 16px;
-  height: 16px;
-  aspect-ratio: 1/1;
-}
-.section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 li a {
-  color: #2E2A94;
-  font-feature-settings: var(--font-features-default);
-  font-family: var(--body);
-  font-size: var(--text-link-xsmall-size);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--text-link-xsmall-line-height, 16px);
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
-  text-decoration-thickness: auto;
-  text-underline-offset: 4.9%;
-  text-underline-position: from-font;
-  white-space: nowrap;
-}
-@media (max-width: 768px) {
-  .section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 li a {
-    font-size: var(--text-link-small-size);
-    line-height: var(--text-link-small-line-height);
-  }
-}
-.section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub2 .expert-lists2 {
-  padding-right: 8px;
+  display: none;
 }
 .section.our-experts-container .our-experts-wrapper .our-experts-cont2 .our-expert-section1 .our-expert-sub3 {
   display: none;
