@@ -762,7 +762,7 @@ main>.section.previous-studies-tab {
 
             @include media(mobile) {
               // width: 98%;
-              justify-content: center;
+              justify-content: start;
             }
 
             .button-container {
@@ -802,7 +802,7 @@ main>.section.previous-studies-tab {
 
             @include media(mobile) {
               // width: 98%;
-              justify-content: center;
+              justify-content: start;
             }
 
             p {
@@ -1078,6 +1078,13 @@ main>.section.previous-studies-tab {
     //   }
     // }
   }
+
+  
+}
+@media only screen and (max-width:767px){
+  .previous-studies-tab:has(.prev-studies-wrapper.embed-container) li:has(> ul[style*="display: block"]){
+padding-bottom:120px
+}
 
   // .co-branding-wrapper {
   //   max-width: 504px;
