@@ -226,9 +226,9 @@ export default async function decorate(block) {
         const hrefnaf = navSection.querySelector('ul li');
         const frgnav = await loadFragment(hrefnaf.children[0].getAttribute('href'));
         hrefnaf.innerHTML = '';
-        if (frgnav !== null) {
-          hrefnaf.append(frgnav.children[0]);
-        }
+        // if (frgnav !== null) {
+        // }
+        hrefnaf.append(frgnav.children[0]);
       }
 
       // --- Desktop Hover Logic ---
