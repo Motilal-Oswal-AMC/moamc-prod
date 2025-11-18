@@ -998,7 +998,7 @@ export default async function decorate(block) {
       }
 
       const copyfunc = dspblk.querySelector('.listindex4');
-      copyfunc.removeAttribute('href');
+      copyfunc.querySelector('a').removeAttribute('href');
       if (copyfunc) {
         copyfunc.addEventListener('click', (e) => {
           const urlCopied = dspblk.querySelector('.listindex5');
