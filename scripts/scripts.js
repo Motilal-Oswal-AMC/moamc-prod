@@ -335,6 +335,17 @@ export async function myAPI(method, url, body = null, customHeaders = {}) {
     return text;
   }
 }
+
+export function generateAppId() {
+  const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVXYZ";
+  let appId = "";
+  for (let i = 0; i < 36; i++) {
+    appId += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return appId;
+  // return "877C010EM8A9CA4820M987BCB394B48563BE";
+}
+
 // export async function myAPI(method, url, body = null, header) {
 //   const options = { method };
 //   if (body) {
@@ -357,6 +368,7 @@ window.hlx.utils = {
   evaluateByDays,
   wishlist,
   myAPI,
+  generateAppId,
 };
 
 /* ---------------- Initialize ---------------- */

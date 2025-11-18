@@ -2,7 +2,7 @@ import dataMapMoObj from '../../scripts/constant.js';
 import {
   div, ul, li, p, input, label, button, img,
 } from '../../scripts/dom-helpers.js';
-import { myAPI } from '../../scripts/scripts.js';
+import { myAPI, generateAppId } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const wealthModalData = Array.from(block.children);
@@ -272,6 +272,7 @@ export default function decorate(block) {
         const headers = {
           'Content-Type': 'application/json',
           'X-Encrypted-Key': 'N',
+          'appid': generateAppId(),
         };
 
         const response = await myAPI(
