@@ -15,6 +15,7 @@ main .previous-studies-blog-container.section.previous-studies-each-details{
     
         @include media(mobile) {
             gap: 40px 12px;
+            justify-content: center;
         }
     
         >.comlist{
