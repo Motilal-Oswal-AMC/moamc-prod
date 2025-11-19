@@ -101,6 +101,6 @@ main .section.previous-studies-ctn.tabs-container {
 }
 @media (max-width: 768px) {
   .previous-studies-ctn.tabs-container .previous-studies-ex2 .tabs-panel {
-    padding: 52px 16px 72px;
+    padding: 52px 0 72px;
   }
 }/*# sourceMappingURL=previous-studies.css.map */

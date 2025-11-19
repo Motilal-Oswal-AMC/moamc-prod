@@ -146,6 +146,13 @@ main .previous-studies-blog-container.section.previous-studies-each-details{
         @include media(mobile) {
             display: flex;
             justify-content: center;
+
+            .previous-studies-blog{
+              @include media(mobile) {
+                display: flex;
+                max-width: 340px;
+              }
+            }
         }
     }
 }

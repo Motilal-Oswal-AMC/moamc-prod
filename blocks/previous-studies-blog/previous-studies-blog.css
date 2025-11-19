@@ -128,4 +128,10 @@ main .previous-studies-blog-container.section.previous-studies-each-details .pre
     display: flex;
     justify-content: center;
   }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  main .previous-studies-blog-container.section.previous-studies-each-details .previous-studies-blog-wrapper .previous-studies-blog {
+    display: flex;
+    max-width: 340px;
+  }
 }/*# sourceMappingURL=previous-studies-blog.css.map */
