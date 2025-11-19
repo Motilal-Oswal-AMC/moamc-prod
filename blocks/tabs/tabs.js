@@ -924,50 +924,125 @@ export default async function decorate(block) {
     });
 
     const prevpage = block.closest('.previous-studies-tab');
+
     [...prevpage.querySelectorAll('.prev-studies-wrapper .icon-share')].forEach((elemevent) => {
       const dsp = elemevent.parentElement.nextElementSibling;
       const prev = elemevent.closest('li').previousElementSibling;
-      prev.style.display = 'none';
+      if (prev) prev.style.display = 'none';
+
       if (dsp !== null) {
         dsp.style.display = 'none';
         dataMapMoObj.CLASS_PREFIXES = ['listindex'];
         dataMapMoObj.addIndexed(dsp);
       }
+
       const eventvar = elemevent.parentElement;
-      eventvar.addEventListener('click', () => {
+
+      // 🔹 Popup Toggle
+      eventvar.addEventListener('click', (e) => {
+        e.stopPropagation();
+
         const dspblk = elemevent.parentElement.nextElementSibling;
-        if (dsp === null) {
-          return false;
-        }
-        if (dspblk.style.display === 'none') {
-          dspblk.style.display = 'block';
-        } else {
-          dspblk.style.display = 'none';
-        }
-      })
-    })
+        if (!dspblk) return;
+
+        const isVisible = dspblk.style.display === 'block';
+
+        // Close all others
+        prevpage.querySelectorAll('.share-popup').forEach(p => p.style.display = 'none');
+
+        dspblk.style.display = isVisible ? 'none' : 'block';
+      });
+
+      const dspblk = elemevent.parentElement.nextElementSibling;
+      if (!dspblk) return;
+
+      // Common share data
+      const getShareData = () => {
+        const shareUrl = window.location.href;
+        const card = elemevent.closest("li");
+        const shareText = card?.querySelector("h3")?.innerText || "Check this out";
+        return { shareUrl, shareText };
+      };
+
+      // 🔹 Facebook Share
+      const facebookBtn = dspblk.querySelector(".listindex1");
+      if (facebookBtn) {
+        facebookBtn.addEventListener("click", (e) => {
+          facebookBtn.querySelector('a').removeAttribute('href');
+          e.stopPropagation();
+          const { shareUrl } = getShareData();
+          const fbLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+          window.open(fbLink, "_blank");
+        });
+      }
+
+      // 🔹 WhatsApp Share
+      const whatsappBtn = dspblk.querySelector(".listindex2");
+      if (whatsappBtn) {
+        whatsappBtn.querySelector('a').removeAttribute('href');
+        whatsappBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const { shareUrl, shareText } = getShareData();
+          const wpLink = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`;
+          window.open(wpLink, "_blank");
+        });
+      }
+
+      // 🔹 X (Twitter) Share
+      const twitterBtn = dspblk.querySelector(".listindex3");
+      if (twitterBtn) {
+        twitterBtn.querySelector('a').removeAttribute('href');
+        twitterBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const { shareUrl, shareText } = getShareData();
+          const twLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+          window.open(twLink, "_blank");
+        });
+      }
+
+      const copyfunc = dspblk.querySelector('.listindex4');
+      if (copyfunc) {
+        copyfunc.querySelector('a').removeAttribute('href');
+        copyfunc.addEventListener('click', (e) => {
+          const urlCopied = dspblk.querySelector('.listindex5');
+          e.stopPropagation();
+          try {
+            const currentUrl = window.location.href;
+            navigator.clipboard.writeText(currentUrl);
+
+            urlCopied.style.display = 'block';
+            setTimeout(() => {
+              urlCopied.style.display = 'none';
+              // breadcrumb.style.display = 'none';
+            }, 1000);
+          } catch (err) {
+            urlCopied.textContent = 'Could not copy URL. Please make sure the window is focused.';
+            urlCopied.style.display = 'block';
+            setTimeout(() => {
+              urlCopied.style.display = 'none';
+            }, 1000);
+          }
+        })
+      }
+    });
+
+    // Click outside → close popup
     document.addEventListener("click", (event) => {
-      // CLOSE DROPLIST
       if (!dropList.contains(event.target) && !selectedTab.contains(event.target)) {
         dropList.classList.remove("active");
       }
 
-      // FIND CLICKED SHARE ICON OR WRAPPER
       const clickedShareIcon = event.target.closest(".icon-share");
-      const clickedSharePopup = event.target.closest(".share-popup"); // example: your popup div
+      const clickedSharePopup = event.target.closest(".share-popup");
 
-      // If clicked inside share popup or on the icon → do nothing
       if (clickedShareIcon || clickedSharePopup || event.target.closest("p")) return;
-      // if (event.target.querySelector(".icon-share")) {
-        // return false;
-      // }
 
-      // Otherwise close all share popups
       prevpage.querySelectorAll(".prev-studies-wrapper .icon-share").forEach((icon) => {
         const popup = icon.parentElement.nextElementSibling;
         if (popup) popup.style.display = "none";
       });
     });
+
 
   }
 }
