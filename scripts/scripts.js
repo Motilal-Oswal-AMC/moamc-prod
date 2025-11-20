@@ -642,3 +642,21 @@ if (promiseQGLP != null) {
 }
 // why qglp componet end
 
+// why qglp css lent start
+const whyQGLPWrp = document.querySelector('.why-qglp .default-content-wrapper');
+
+if (whyQGLPWrp) {
+  whyQGLPWrp.classList.add("whyQGLPWrapper");
+  // why qglp css lent end
+}
+// why qglp css lent end
+
+// promise qglp css lent start
+const promiseQGLPWrp = document.querySelector('.promise-qglp .default-content-wrapper');
+
+if (promiseQGLPWrp) {
+  promiseQGLPWrp.classList.add("promiseQGLPWrapper");
+  // why qglp css lent end
+}
+// promise qglp css lent end
+
