@@ -207,10 +207,10 @@ export default async function decorate(block) {
 
     //   const altText = altTextMap[iconName];
 
-  //   if (altText) {
-  //     image.setAttribute('alt', altText);
-  //   }
-  // });
+    //   if (altText) {
+    //     image.setAttribute('alt', altText);
+    //   }
+    // });
   }
 
   const delay = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
@@ -303,5 +303,40 @@ if (container) {
     if (altText) {
       image.setAttribute('alt', altText);
     }
+  });
+}
+
+// Get the current path
+const currentPath = window.location.pathname;
+
+// Define the target path you want to match
+const targetPath = '/wcs/in/en/wcs-previous-studies';
+
+// Check if we are on the correct page
+if (currentPath.includes(targetPath)) {
+  // Function to hide footer
+  const hideFooter = () => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.style.display = 'none';
+    }
+  };
+
+  // 1. Try immediately in case it's already there
+  hideFooter();
+
+  // 2. Create an observer to watch for the footer appearing (Async loading support)
+  const observer = new MutationObserver((mutations, obs) => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.style.display = 'none';
+      obs.disconnect(); // Stop watching once we found and hid it
+    }
+  });
+
+  // Start observing the body for added nodes
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
   });
 }
