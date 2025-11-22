@@ -68,7 +68,9 @@
       "tab-glp",
       "mo-qglp",
       "rich-tabs",
-      "wealth-modal"
+      "wealth-modal",
+      "global-gateway",
+      "blog-author-details"
     ]
   },
   {
@@ -131,6 +133,12 @@
     "id": "key-facts",
     "components": [
       "key-item"
+    ]
+  },
+  {
+    "id": "live-streaming",
+    "components": [
+      "live-streaming-content"
     ]
   },
   {
