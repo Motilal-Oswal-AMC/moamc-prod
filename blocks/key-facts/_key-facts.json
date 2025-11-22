@@ -38,62 +38,62 @@
       "fields": [
         {
           "component": "text",
-          "name": "col1_title_Investment",
+          "name": "col1_title-Investment",
           "label": "Inter Investment Objective"
         },
         {
           "component": "text",
-          "name": "col1_title_Minimum_Application_Amount",
+          "name": "col1_title-Minimum-Application-Amount",
           "label": "Inter Minimum Application Amount"
         },
         {
           "component": "text",
-          "name": "col1_title_Minimum_Redemption_Amount",
+          "name": "col1_title-Minimum-Redemption-Amount",
           "label": "Inter Minimum Redemption Amount"
         },
         {
           "component": "text",
-          "name": "col1_title_Latest_AUM",
+          "name": "col1_title-Latest-AUM",
           "label": "Inter Latest AUM"
         },
         {
           "component": "text",
-          "name": "col2_title_Portfolio_Turnover_Ratio",
+          "name": "col2_title-Portfolio-Turnover-Ratio",
           "label": "Inter Portfolio Turnover Ratio"
         },
         {
           "component": "text",
-          "name": "col2_title_Plans",
+          "name": "col2_title-Plans",
           "label": "Inter Plans"
         },
         {
           "component": "text",
-          "name": "col2_title_Options",
+          "name": "col2_title-Options",
           "label": "Inter Options (Under each plan)"
         },
         {
           "component": "text",
-          "name": "col2_title_Benchmark",
+          "name": "col2_title-Benchmark",
           "label": "Inter Benchmark"
         },
         {
           "component": "text",
-          "name": "col3_title_Total_Expense_Ratio",
+          "name": "col3_title-Total-Expense-Ratio",
           "label": "Inter Total Expense Ratio"
         },
         {
           "component": "text",
-          "name": "col3_title_Inception date",
+          "name": "col3_title-Inception-date",
           "label": "Inter Inception date"
         },
         {
           "component": "text",
-          "name": "col3_title_Entry Load",
+          "name": "col3_title-Entry-Load",
           "label": "Inter Entry Load"
         },
         {
           "component": "text",
-          "name": "col3_title_Exit_Load_Policy",
+          "name": "col3_title-Exit-Load-Policy",
           "label": "Inter Exit Load Policy"
         }
       ]

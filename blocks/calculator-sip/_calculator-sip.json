@@ -22,55 +22,55 @@
       "fields": [
         {
           "component": "text",
-          "name": "col1_search_placeholder",
+          "name": "col1_search-placeholder",
           "label": "Search Text Placeholder",
           "value": "Search a fund"
         },
         {
           "component": "text",
-          "name": "col1_default_fund",
+          "name": "col1_default-fund",
           "label": "Default Fund Name",
           "value": "Motilal Oswal Mid cap fund"
         },
         {
           "component": "text",
-          "name": "col1_sip_label",
+          "name": "col1_sip-label",
           "label": "SIP Button Label",
           "value": "SIP"
         },
         {
           "component": "text",
-          "name": "col1_lumpsum_label",
+          "name": "col1_lumpsum-label",
           "label": "Lumpsum Button Label",
           "value": "Lumpsum"
         },
         {
           "component": "text",
-          "name": "col2_sip_input_label",
+          "name": "col2_sip-input-label",
           "label": "SIP Investment Label",
           "value": "If you would have invested monthly"
         },
         {
           "component": "text",
-          "name": "col2_lumpsum_input_label",
+          "name": "col2_lumpsum-input-label",
           "label": "Lumpsum Investment Label",
           "value": "If you would have invested"
         },
         {
           "component": "number",
-          "name": "col2_default_amount",
+          "name": "col2_default-amount",
           "label": "Default Investment Amount",
           "value": 10000
         },
         {
           "component": "text",
-          "name": "col2_tenure_input_label",
+          "name": "col2_tenure-input-label",
           "label": "Tenure Input Label",
           "value": "Tenure"
         },
         {
           "component": "select",
-          "name": "col3_default_tenure",
+          "name": "col3_default-tenure",
           "label": "Default Tenure",
           "value": "10",
           "options": [
@@ -114,56 +114,56 @@
         },
         {
           "component": "text",
-          "name": "col3_invested_amount_label",
+          "name": "col3_invested-amount-label",
           "label": "Invested Amount Label",
           "value": "Invested Amount"
         },
         {
           "component": "number",
-          "name": "col3_invested_amount_value",
+          "name": "col3_invested-amount-value",
           "label": "Default Invested Amount",
           "value": 1200000
         },
         {
           "component": "text",
-          "name": "col3_current_value_label",
+          "name": "col3_current-value-label",
           "label": "Current Value Label",
           "value": "Current Value of Investment"
         },
         {
           "component": "number",
-          "name": "col4_default_current_value",
+          "name": "col4_default-current-value",
           "label": "Default Current Value of Investment",
           "value": 2500000
         },
         {
           "component": "text",
-          "name": "col4_return_cagr_label",
+          "name": "col4_return-cagr-label",
           "label": "Return (CAGR) Label",
           "value": "Return (CAGR)"
         },
         {
           "component": "number",
-          "name": "col4_annual_return_rate",
+          "name": "col4_annual-return-rate",
           "label": "Annual Return Rate (%)",
           "value": 18,
           "description": "Expected annual return rate for calculations"
         },
         {
           "component": "text",
-          "name": "col4_cta_button_text",
+          "name": "col4-cta-button-text",
           "label": "CTA Button Text",
           "value": "Start SIP"
         },
         {
           "component": "text",
-          "name": "col4_other_calculators_text",
+          "name": "col4_other-calculators-text",
           "label": "Other Calculators Link Text",
           "value": "View other calculators"
         },
         {
           "component": "text",
-          "name": "col4_other_calculators_url",
+          "name": "col4_other-calculators-url",
           "label": "Other Calculators URL",
           "value": "#"
         }
