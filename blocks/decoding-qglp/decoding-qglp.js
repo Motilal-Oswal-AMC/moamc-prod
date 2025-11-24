@@ -8,5 +8,6 @@ export default async function decorate(block) {
       'glpcoding-sub-inner',
     ];
     dataMapMoObj.addIndexed(block);
+    block.querySelectorAll('img').setAttribute('fetchpriority', 'high');
   }
 }
