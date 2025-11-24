@@ -22,7 +22,8 @@
           "width",
           "min-width",
           "max-width",
-          "height"
+          "height",
+          "column-gap"
         ]
       }
     ],
