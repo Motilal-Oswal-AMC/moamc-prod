@@ -226,7 +226,6 @@ export default function decorate(block) {
         assocError.textContent = 'Please select an association.';
       } else assocError.textContent = '';
     }
-
     inputarg.classList.toggle('error', !valid && inputarg.value.trim() !== '');
     toggleErrorIcon(inputarg, valid);
     return valid;
@@ -282,10 +281,10 @@ export default function decorate(block) {
           headers,
         );
 
-        const result = await response.json();
+        const result = await response //.json();
         // console.log('API Response:', result);
 
-        if (response.ok) {
+        if (result) {
           alert('Your details have been submitted successfully!');
           // Reset form
           fields.forEach((f) => {
@@ -293,7 +292,9 @@ export default function decorate(block) {
             const labelvar = f.parentElement.querySelector('.label');
             if (labelvar) labelvar.classList.remove('filled');
           });
+          // block.querySelector('.btn-mand .btn').classList.remove('active');
           toggleSubmitButton();
+          block.querySelector('.associated-drop .error-msg').textContent = '';
         } else {
           alert(`Something went wrong: ${result.message || 'Unknown error'}`);
         }
