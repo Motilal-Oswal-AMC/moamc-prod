@@ -647,6 +647,10 @@
             "value": "decoding-qglp-static"
           },
           {
+            "name": "Article Detail Library",
+            "value": "article-detail-library"
+          },
+          {
             "name": "Screen 400",
             "value": "screen-400"
           },

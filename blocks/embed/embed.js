@@ -144,7 +144,8 @@ export default function decorate(block) {
             const elem = prevStudyul.closest('.aw-subctnin1-innerchild1').querySelector('ul');
             elem.classList.add('panel-field');
             Array.from(elem.children).forEach((elfor, ind) => {
-              elfor.classList.add(`panellist${ind+1}`);
+              const indexVal = ind + 1;
+              elfor.classList.add(`panellist${indexVal}`);
             });
           }
         }
