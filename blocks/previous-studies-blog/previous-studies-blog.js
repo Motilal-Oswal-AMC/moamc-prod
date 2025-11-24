@@ -62,19 +62,21 @@ export default async function decorate(block) {
   }
 
   const eachStudiesBlog = document.querySelectorAll('.previous-studies-blog-wrapper .previous-studies-blog > .comlist');
-  eachStudiesBlog.forEach(ex => {
+  Array.from(eachStudiesBlog).forEach((ex) => {
     const parent = ex.querySelector('.ps-in1');
     const toMove = ex.querySelector('.ps-in3');
 
     if (parent && toMove) {
-        parent.appendChild(toMove); // move ps-in3 inside ps-in1
+      parent.appendChild(toMove); // move ps-in3 inside ps-in1
     }
-});
+  });
 
-const legendWord = document.querySelector('.section.previous-studies-ctn');
-
-if(legendWord){
-  legendWord.classList.add("legendWordCtn")
-}
-
+  try {
+    const legendWord = document.querySelector('.section.previous-studies-ctn');
+    if (legendWord) {
+      legendWord.classList.add('legendWordCtn');
+    }
+  } catch (error) {
+    // console.log(error);
+  }
 }
