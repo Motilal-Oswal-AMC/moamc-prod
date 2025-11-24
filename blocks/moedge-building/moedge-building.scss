@@ -481,7 +481,7 @@
             .moedge-build-sec1 {
                 img {
                     border-radius: var(--border-radius-8);
-                    background: lightgray 0 -0.156px / 100% 127.052% no-repeat;
+                    background: lightgray 0 -0.156px #{'/'} 100% 127.052% no-repeat;
                     object-position: top;
 
                     @include media(mobile-md) {
@@ -535,7 +535,7 @@
 
             img {
                 border-radius: var(--border-radius-8);
-                background: lightgray 0 -0.156px / 100% 127.052% no-repeat;
+                background: lightgray 0 -0.156px #{'/'} 100% 127.052% no-repeat;
                 object-position: top;
             }
         }
