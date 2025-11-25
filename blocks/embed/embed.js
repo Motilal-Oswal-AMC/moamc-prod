@@ -11,6 +11,7 @@ import {
   div, table, thead, tbody, tr, p,
 } from '../../scripts/dom-helpers.js';
 import { createModal } from '../modal/modal.js';
+import { decorateLCP } from '../../scripts/scripts.js';
 
 const loadScript = (url, callback, type) => {
   const head = document.querySelector('head');
@@ -206,6 +207,7 @@ export default function decorate(block) {
   if (data !== null && window.location.href.includes('/wcs/in/en/coverage')) {
     if (!data.querySelector('.maintab')) {
       const subdata = data.querySelectorAll('.section');
+      decorateLCP(subdata[0]);
       if (dataMapMoObj.objdata === undefined) {
         dataMapMoObj.objdata = {};
       }

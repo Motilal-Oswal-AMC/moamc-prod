@@ -193,6 +193,17 @@ function decorateAutoBlock(element) {
   });
 }
 
+export function decorateLCP(main) {
+  const param = main.firstElementChild;
+  const paramData = param !== null ? param.querySelectorAll('img') : null;
+  if (paramData !== null) {
+    Array.from(paramData).forEach((img) => {
+      img.setAttribute('fetchpriority', 'high');
+      img.setAttribute('loading', 'eager');
+    });
+  }
+}
+
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
@@ -203,6 +214,7 @@ async function loadEager(doc) {
     decorateAutoBlock(doc);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
+    decorateLCP(main);
   }
   try {
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
@@ -370,6 +382,7 @@ window.hlx.utils = {
   wishlist,
   myAPI,
   generateAppId,
+  decorateLCP,
 };
 
 /* ---------------- Initialize ---------------- */
