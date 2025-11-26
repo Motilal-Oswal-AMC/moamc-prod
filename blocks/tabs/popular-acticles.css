@@ -82,6 +82,7 @@
 @media (max-width: 768px) {
   .popular-artical .tabs .tabs-list .tabs-tab p {
     line-height: 16px;
+    font-weight: 500;
   }
 }
 .popular-artical .tabs .tabs-list .tabs-tab:hover {

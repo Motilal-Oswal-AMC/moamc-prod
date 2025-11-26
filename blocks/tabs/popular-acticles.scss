@@ -90,9 +90,10 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: var(--label-large-line-height);
-
+                    
                     @include media(mobile) {
                         line-height: 16px;
+                        font-weight: 500;
                     }
                 }
 
