@@ -24,8 +24,14 @@
   type="font/woff2"
 />
 
-<link rel="stylesheet" href="/styles/styles.css" />
-<link rel="stylesheet" href="/styles/common.css" />
+<!-- Non-blocking stylesheet loading: preload then swap to stylesheet on load -->
+<link rel="preload" href="/styles/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<link rel="preload" href="/styles/common.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<!-- Fallback for browsers without preload support or users with JS disabled -->
+<noscript>
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <link rel="stylesheet" href="/styles/common.css" />
+</noscript>
 
 <style>
   /* Inter Regular (400) */
