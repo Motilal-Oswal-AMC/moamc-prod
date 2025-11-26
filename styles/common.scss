@@ -643,7 +643,6 @@ main>.section.previous-studies-tab.tabs-container {
     }
 
     .comlist {
-      // background-color: red;
       p {
         &.awsubctn-innerchild1 {
           color: var(--neutrals-900);
@@ -1206,6 +1205,8 @@ main>.section.previous-studies-tab.tabs-container {
       padding: 0 16px;
       overflow-x: auto;
       margin-right: 25px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     &::-webkit-scrollbar {
