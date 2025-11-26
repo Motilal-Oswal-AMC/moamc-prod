@@ -285,7 +285,7 @@
 }
 @media (max-width: 768px) {
   .section.popular-artical.tabs-container.landing-popular-artical .default-content-wrapper:first-of-type {
-    padding: 24px 16px 0;
+    padding: 0 16px;
   }
 }
 .section.popular-artical.tabs-container.landing-popular-artical .default-content-wrapper:first-of-type h1, .section.popular-artical.tabs-container.landing-popular-artical .default-content-wrapper:first-of-type h2, .section.popular-artical.tabs-container.landing-popular-artical .default-content-wrapper:first-of-type h3, .section.popular-artical.tabs-container.landing-popular-artical .default-content-wrapper:first-of-type h4, .section.popular-artical.tabs-container.landing-popular-artical .default-content-wrapper:first-of-type h5, .section.popular-artical.tabs-container.landing-popular-artical .default-content-wrapper:first-of-type h6 {
