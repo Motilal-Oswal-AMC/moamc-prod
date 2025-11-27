@@ -203,7 +203,7 @@ export default function decorate(block) {
     }
   }
   const data = block.closest('main');
-  if (data !== null && window.location.href.includes('/wcs/in/en/coverage')) {
+  if (data !== null && window.location.href.includes('/coverage')) {
     if (!data.querySelector('.maintab')) {
       const subdata = data.querySelectorAll('.section');
       if (dataMapMoObj.objdata === undefined) {
@@ -221,6 +221,12 @@ export default function decorate(block) {
       // console.log(dataMapMoObj.objdata);
       const divmain = div({ class: 'maintab' });
       Object.keys(dataMapMoObj.objdata).forEach((elobj, index) => {
+        if (dataMapMoObj.objdata[elobj].Digital) {
+          const digi = dataMapMoObj.objdata[elobj].Digital;
+          Array.from(digi.querySelectorAll('a')).forEach((adigi) => {
+            adigi.setAttribute('target', '_blank');
+          });
+        }
         const innerdiv = div({ class: 'innerdiv' });
         const valueAry = Object.values(dataMapMoObj.objdata);
         Object.keys(valueAry[index]).forEach((inner) => {
@@ -252,6 +258,11 @@ export default function decorate(block) {
         container.querySelector('.maininnerdiv').innerHTML += innerdiv.outerHTML;
         divmain.append(container);
       });
+      // Array.from(data.querySelectorAll(dataMapMoObj.objdata.Digital)).forEach((digi) => {
+      // Array.from(digi.querySelectorAll('a')).forEach((adigi) => {
+      //   adigi.setAttribute('target', '_blank');
+      // });
+      // });
       // console.log(divmain);
       buildtabblock(divmain);
       if (!data.classList.contains('modal-wrapper')) {
@@ -269,7 +280,7 @@ export default function decorate(block) {
         // var pPostval = selectedLabelTab.split(' ')[1]
         const pPostval = selectedLabelTab.split(' ').slice(1).join(' ');
 
-        if (window.location.pathname.includes('/wcs/in/en/coverage')) {
+        if (window.location.pathname.includes('/coverage')) {
           const tableMain = div(
             { class: 'coverage-table-container' },
             // p({ class: 'studytab-title' }, selectedLabelTab),
