@@ -115,14 +115,22 @@ async  function decorateBreadcrumbs() {
 decorateBreadcrumbs();
 
 const newSection = document.querySelector('.moedge-article-main .article-sub-left.articlesub1 .leftartsub1');
-document.addEventListener("DOMContentLoaded", function () {
-    var noscriptTag = document.createElement("noscript");
 
-    noscriptTag.innerHTML = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS" ' +
-        'height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+(function injectGTMNoScript() {
+  const noscript = document.createElement('noscript');
+  const iframe = document.createElement('iframe');
+  
+  iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS';
+  iframe.height = '0';
+  iframe.width = '0';
+  iframe.style.cssText = 'display:none;visibility:hidden';
+  
+  noscript.appendChild(iframe);
+  
+  // Insert as first child of body
+  document.body.insertBefore(noscript, document.body.firstChild);
+})();
 
-    document.body.insertBefore(noscriptTag, document.body.firstChild);
-});
 
 if (newSection) {
   const item5 = newSection.querySelector('.leftartitem5');
