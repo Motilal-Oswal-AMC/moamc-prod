@@ -115,7 +115,15 @@ async  function decorateBreadcrumbs() {
 decorateBreadcrumbs();
 
 const newSection = document.querySelector('.moedge-article-main .article-sub-left.articlesub1 .leftartsub1');
-document.body.append('<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS"height="0" width="0" style="display:none;visibility:hidden"></iframe>');
+document.addEventListener("DOMContentLoaded", function () {
+    var noscriptTag = document.createElement("noscript");
+
+    noscriptTag.innerHTML = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS" ' +
+        'height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+
+    document.body.insertBefore(noscriptTag, document.body.firstChild);
+});
+
 if (newSection) {
   const item5 = newSection.querySelector('.leftartitem5');
   const item6 = newSection.querySelector('.leftartitem6');
