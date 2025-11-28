@@ -348,7 +348,7 @@ export default function decorate(block) {
             objreq,
             headers,
           );
-        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/')) {
+        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/') || window.location.href.includes('https://beta.motilaloswalwcs.com/')) {
           response = await myAPI(
             'POST',
             'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
