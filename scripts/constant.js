@@ -1,4 +1,4 @@
-const dataMapMoObj = {
+ const dataMapMoObj = {
   ObjTemp: {
     inception_Ret: 'Since Inception',
     oneYear_Ret: '1 Year',

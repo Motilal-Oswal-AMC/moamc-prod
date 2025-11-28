@@ -1,5 +1,5 @@
 /*    */
-import createField from './form-fields.js';
+ import createField from './form-fields.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
 export async  function createForm(formHref, submitHref) {
