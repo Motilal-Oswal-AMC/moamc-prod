@@ -19,7 +19,7 @@ const useLiveApi = true;
 // The API endpoint is now a single URL.
 const fundManagerAPIv = 'https://www.motilaloswalmf.com/mutualfund/api/v1/GetFundMangerBySchemeId';
 
-export default async  function decorate(block) {
+export default async function decorate(block) {
   let fundManagers;
   let agentData;
   let managerSchemes;
@@ -39,7 +39,7 @@ export default async  function decorate(block) {
     }
   });
 
-  async  function fundManagerAPI() {
+  async function fundManagerAPI() {
     if (useLiveApi) {
       try {
         const schemeCodeValue = localStorage.getItem('schcodeactive');
@@ -186,7 +186,7 @@ export default async  function decorate(block) {
   // added show modal
 
   const delay = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
-  async  function removeClassAfterDelay(time) {
+  async function removeClassAfterDelay(time) {
     await delay(time);
     const bodym = document.querySelector('body');
     bodym.classList.remove('modal-open');

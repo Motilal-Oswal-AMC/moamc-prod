@@ -8,7 +8,7 @@ import {
 } from '../../scripts/dom-helpers.js';
 import dataCfObj from '../../scripts/dataCfObj.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   Array.from(block.children).forEach((child, ind) => {
     child.classList.add(`watchlist-items${ind + 1}`);
     Array.from(child.children).forEach((subChild, subind) => {

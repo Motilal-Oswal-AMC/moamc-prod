@@ -3,7 +3,7 @@ import dataCfObj from '../../scripts/dataCfObj.js';
 import fundcardblock from '../fund-card/fund-card.js';
 import swiperblock from '../swiper/swiper.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   dataMapMoObj.CLASS_PREFIXES = [];
   dataMapMoObj.CLASS_PREFIXES = ['itemcards', 'subitemcards'];
   dataMapMoObj.addIndexed(block);

@@ -1,6 +1,6 @@
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   dataMapMoObj.CLASS_PREFIXES = ['compaign', 'compaignsub', 'compaigninner'];
   dataMapMoObj.addIndexed(block);
 
@@ -80,7 +80,7 @@ export default  function decorate(block) {
     });
   }
 
-  // document.addEventListener("DOMContentLoaded",  function () {
+  // document.addEventListener("DOMContentLoaded", function () {
   // Select all li elements with class starting with "strategy2" (like strategy21, strategy25...)
   const listItemsStrategy = document.querySelectorAll("li.comlist[class*='strategy2']");
 

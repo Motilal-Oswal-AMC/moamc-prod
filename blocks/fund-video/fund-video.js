@@ -2,7 +2,7 @@
 // import Embed from '../embed/embed.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   // Embed(block.children[1].querySelector('.button-container'));
   dataMapMoObj.CLASS_PREFIXES = ['fundvedmain', 'fundvedsubmain', 'fundvedinnermain', 'fundsubvedmain'];
   dataMapMoObj.addIndexed(block);

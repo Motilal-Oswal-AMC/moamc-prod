@@ -1,6 +1,6 @@
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   dataMapMoObj.CLASS_PREFIXES = [
     'why-choose-us-row',
     'why-choose-us-sec',

@@ -2,7 +2,7 @@ import buildtabblock from '../tabs/tabs.js';
 import Swiper from '../swiper/swiper-bundle.min.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   buildtabblock(block);
   block.classList.add('gradient-show');
 
@@ -27,7 +27,7 @@ export default  function decorate(block) {
     }
   }
 
-   function updateTabsForMobile() {
+  function updateTabsForMobile() {
     const isMobile = window.innerWidth < 768;
     const roleTabs = block.querySelectorAll('[role="tab"]');
 

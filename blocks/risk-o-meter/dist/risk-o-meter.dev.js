@@ -1,7 +1,7 @@
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
- function decorate(block) {
+function decorate(block) {
   // Add risk-meter container classes
   [...block.children].forEach((row, rowIndex) => {
     row.classList.add('risk-meter-cont', `corner-${rowIndex + 1}`);

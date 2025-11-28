@@ -9,7 +9,7 @@ import {
   span,
 } from '../../scripts/dom-helpers.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   const crosImage = Array.from(block.querySelectorAll('p'))[0];
   if (block.querySelector('h4') === null) {
     return false;
@@ -225,7 +225,7 @@ export default  function decorate(block) {
   // const coBrand = document.querySelectorAll('.subbreadcrb4');
   // console.log(coBrand);
   const delay = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
-  async  function removeClassAfterDelay() {
+  async function removeClassAfterDelay() {
     await delay(1200);
     block.closest('.modal').remove();
     const bodym = document.querySelector('body');

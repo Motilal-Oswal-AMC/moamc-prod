@@ -15,7 +15,7 @@ import { initObserver, myAPI } from '../../scripts/scripts.js';
 
 window.am5.addLicense('AM5C-253273928');
 
-export default  function decorate(block) {
+export default function decorate(block) {
   const col1 = block.children[0].querySelector('h4');
   const col2 = block.children[0].querySelector('p');
 
@@ -127,7 +127,7 @@ export default  function decorate(block) {
 
   // --- STATE & API LOGIC ---
   const useLiveAPI = true;
-   function filterChartData(data, filter) {
+  function filterChartData(data, filter) {
     if (!data || data.length === 0) return [];
     const sortedData = [...data].sort(
       (a, b) => new Date(a.navdate) - new Date(b.navdate),
@@ -163,8 +163,8 @@ export default  function decorate(block) {
     return sortedData.filter((item) => new Date(item.navdate) >= cutoffDate);
   }
 
-  // ✅  function now accepts dynamic series names
-   function renderAmChart(chartData, series1Name, series2Name) {
+  // ✅ Function now accepts dynamic series names
+  function renderAmChart(chartData, series1Name, series2Name) {
     if (root) {
       root.dispose();
       root = null;
@@ -576,7 +576,7 @@ export default  function decorate(block) {
     });
   }
 
-  async  function renderGraph(filter) {
+  async function renderGraph(filter) {
     // UX Improvement: Show a loading message while fetching data
     if (!cachedAPIData) {
       graphDiv.innerHTML = '<div class=\'chart-loader\'>Loading Chart...</div>';
@@ -681,7 +681,7 @@ export default  function decorate(block) {
     return false;
   }
 
-   function updateReturnsDisplay(filter) {
+  function updateReturnsDisplay(filter) {
     // const planTypesec = 'Direct';
     // const planOptionsec = 'Growth';
 
@@ -731,7 +731,7 @@ export default  function decorate(block) {
     }
   }
 
-  async  function updateDashboard(filter) {
+  async function updateDashboard(filter) {
     activeFilter = filter;
     // Update button styles
     [...filterBar.children].forEach((btn) => {
@@ -754,7 +754,7 @@ export default  function decorate(block) {
   // Initial load
   updateDashboard(activeFilter);
 
-  //  function myAPI(method, url, data = null) {
+  // function myAPI(method, url, data = null) {
   //   return new Promise((resolve, reject) => {
   //     const xhr = new XMLHttpRequest();
   //     xhr.open(method, url, true);

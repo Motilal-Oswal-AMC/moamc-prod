@@ -7,7 +7,7 @@
 import dataMapMoObj from '../../scripts/constant.js';
 // import moEdge from './popular-acticles.js';
 
-export default async  function decorate(block) {
+export default async function decorate(block) {
   const previousStudiesBlog = block.closest('.previous-studies-blog');
   if (previousStudiesBlog !== null) {
     dataMapMoObj.CLASS_PREFIXES = ['ps-ex', 'ps-in', 'ps-cont', 'ps-subcont'];

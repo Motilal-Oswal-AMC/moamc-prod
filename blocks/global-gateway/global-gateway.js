@@ -1,6 +1,6 @@
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   // const newSec = block.querySelector('section');
   dataMapMoObj.CLASS_PREFIXES = [
     'global-cont',

@@ -1,6 +1,6 @@
 import Swiper from './swiper-bundle.min.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   block.classList.add('swiper');
   const swipperwrapper = document.createElement('div');
   swipperwrapper.classList.add('swiper-wrapper');
@@ -11,7 +11,7 @@ export default  function decorate(block) {
   block.append(swipperwrapper);
   const blockClassList = Array.from(block.classList);
 
-   function handleResolution() {
+  function handleResolution() {
     const objConfig = {};
     if (window.innerWidth < 768) {
       // Mobile

@@ -1,7 +1,7 @@
 import dataMapMoObj from '../../scripts/constant.js';
 import formblock from '../form/form.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   // console.log(block)
   Array.from(block.children).forEach((row, rowIndex) => {
     row.classList.add('fund-us-container');

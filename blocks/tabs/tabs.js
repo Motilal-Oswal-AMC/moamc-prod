@@ -8,7 +8,7 @@ import {
 import dataMapMoObj from '../../scripts/constant.js';
 // import moEdge from './popular-acticles.js';
 
-export default async  function decorate(block) {
+export default async function decorate(block) {
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
@@ -376,7 +376,7 @@ export default async  function decorate(block) {
       });
   }
   /// //////////////////////first Tab ////////////////////////////
-   function generateBarChart(data) {
+  function generateBarChart(data) {
     const wrapper = document.createElement('div');
     wrapper.classList.add('chart-wrapper');
     data.forEach((item) => {
@@ -415,7 +415,7 @@ export default async  function decorate(block) {
     tabpanelone.appendChild(wrapper);
     return wrapper;
   }
-   function generateBarChartHoldings(data) {
+  function generateBarChartHoldings(data) {
     //   const wrapper = createEl('div', { class: 'chart-wrapper' });
     const wrapper = document.createElement('div');
     wrapper.classList.add('chart-wrapper');
@@ -585,7 +585,7 @@ export default async  function decorate(block) {
 
               let activeIndex = -1;
 
-              // This is the only  function that needs a change
+              // This is the only function that needs a change
               const updateActiveItem = () => {
                 const visibleItems = listContainer.querySelectorAll('.singleval:not([style*="display: none"])');
                 listItems.forEach((item) => item.classList.remove('active'));
@@ -791,7 +791,7 @@ export default async  function decorate(block) {
   // Get all the tab buttons
   const tabsPreviousStudies1 = document.querySelectorAll('.glossary-tabs .tabs-list .tabs-tab');
   if (tabsPreviousStudies1) {
-  //  function to handle switching tabs
+  // Function to handle switching tabs
     const switchTab = (clickedTab) => {
     // 1. Remove 'active' and 'aria-selected' from all tabs
       Array.from(tabsPreviousStudies1).forEach((tab) => {
@@ -871,7 +871,7 @@ export default async  function decorate(block) {
     const tabsPreviousStudies = document.querySelectorAll('.previous-studies-ctn .tabs-list .tabs-tab');
 
     if (tabsPreviousStudies) {
-    //  function to handle switching tabs
+    // Function to handle switching tabs
       const switchTab = (clickedTab) => {
       // 1. Remove 'active' and 'aria-selected' from all tabs
         tabsPreviousStudies.forEach((tab) => {

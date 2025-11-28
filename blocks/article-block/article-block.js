@@ -1,6 +1,6 @@
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   if (block.classList.contains('article-left')) {
     dataMapMoObj.CLASS_PREFIXES = ['article-left-main', 'article-left-sub', 'article-left-inner', 'sub-article-left', 'article-sub-inner', 'left-sub-item'];
     dataMapMoObj.addIndexed(block);

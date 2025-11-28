@@ -2,7 +2,7 @@ import {
   a, button, div, input, label, span,
 } from '../../scripts/dom-helpers.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   block.style.display = 'none'; // RM11
   Array.from(block.children).forEach((el, index) => {
     el.classList.add(`newsitem${index + 1}`);

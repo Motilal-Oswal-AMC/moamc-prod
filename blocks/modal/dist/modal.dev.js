@@ -14,9 +14,9 @@ import {
 /**
  * Creates a modal dialog.
  * @param {NodeList} contentNodes The nodes to add to the modal body.
- * @returns {object} An object with the block and a  function to show the modal.
+ * @returns {object} An object with the block and a function to show the modal.
  */
-async  function createModal(contentNodes) {
+async function createModal(contentNodes) {
   await loadCSS(`${window.hlx.codeBasePath}/blocks/modal/modal.css`);
 
   const dialog = document.createElement('dialog');
@@ -77,7 +77,7 @@ async  function createModal(contentNodes) {
  * Fetches fragment content and opens it in a modal.
  * @param {string} fragmentUrl The URL of the fragment to display.
  */
-async  function openModal(fragmentUrl) {
+async function openModal(fragmentUrl) {
   const path = fragmentUrl.startsWith('http')
     ? new URL(fragmentUrl, window.location).pathname
     : fragmentUrl;

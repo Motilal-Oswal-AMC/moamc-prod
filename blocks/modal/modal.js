@@ -6,7 +6,7 @@ import {
 import dataMapMoObj from '../../scripts/constant.js';
 import dataCfObj from '../../scripts/dataCfObj.js';
 
-export async  function createModal(contentNodes) {
+export async function createModal(contentNodes) {
   await loadCSS(`${window.hlx.codeBasePath}/blocks/modal/modal.css`);
   const contentNodesClass = [...contentNodes].filter(
     (node) => node.classList && node.classList.contains('risk-o-meter-container'),
@@ -81,8 +81,8 @@ export async  function createModal(contentNodes) {
   };
 }
 
-// --- Original openModal  function (unchanged) ---
-export async  function openModal(fragmentUrl) {
+// --- Original openModal function (unchanged) ---
+export async function openModal(fragmentUrl) {
   const path = fragmentUrl.startsWith('http')
     ? new URL(fragmentUrl, window.location).pathname
     : fragmentUrl;
@@ -92,8 +92,8 @@ export async  function openModal(fragmentUrl) {
   showModal();
 }
 
-// --- Specialized  function for On-Card Modals ---
-// async  function openModalOnElement(fragmentUrl, clickedElement) {
+// --- Specialized function for On-Card Modals ---
+// async function openModalOnElement(fragmentUrl, clickedElement) {
 //   // **IMPORTANT**: Replace '.your-card-class' with the actual class of your fund card!
 //   let schcodeactive;
 //   if (
@@ -165,7 +165,7 @@ export async  function openModal(fragmentUrl) {
 //     closeButton.addEventListener('click', (e) => {
 //       e.stopPropagation(); // Stop click from bubbling further
 //       const delay = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
-//       async  function removeClassAfterDelay() {
+//       async function removeClassAfterDelay() {
 //         await delay(1200);
 //         overlay.remove('.card-modal-overlay');
 //       }
@@ -185,8 +185,8 @@ export async  function openModal(fragmentUrl) {
 //   }
 // }
 
-// --- Specialized  function for On-Card Modals (New) ---
-async  function openModalOnElement(fragmentUrl, clickedElement) {
+// --- Specialized function for On-Card Modals (New) ---
+async function openModalOnElement(fragmentUrl, clickedElement) {
   // This business logic for schcode can remain the same
   let schcodeactive;
   const cardWrapper = clickedElement.closest('.card-wrapper'); // More robust DOM traversal
@@ -327,11 +327,11 @@ async  function openModalOnElement(fragmentUrl, clickedElement) {
 }
 // --- The SINGLE, SMART handler for ALL modal clicks ---
 const delay = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
-async  function removeClassAfterDelay() {
+async function removeClassAfterDelay() {
   await delay(1200);
 }
 
-export  function initializeModalHandlers() {
+export function initializeModalHandlers() {
   document.body.addEventListener('click', async (e) => {
     const link = e.target.closest('a');
     if (!link || !link.href) return;
@@ -381,8 +381,8 @@ export  function initializeModalHandlers() {
     }
 
     // Media coverage page - Adding class to modal
-    if (window.location.pathname.includes('/wcs/in/en/coverage')) {
-      if (!modal.querySelector('.embed')) {
+    if (window.location.pathname.includes('/coverage')) {
+      if (modal.querySelector('.embed img')) {
         modal.classList.add('coverage-image-modal');
         if (!modal.querySelector('.modal-content .close-button')) {
           modal.querySelector('.modal-content').prepend(modal.querySelector('.close-button'));

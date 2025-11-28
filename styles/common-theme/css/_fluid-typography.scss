@@ -3,8 +3,8 @@
 $default-min-bp: 390px;
 $default-max-bp: 1440px;
 
-// Round  function using math module
-@ function round($number, $decimals: 0) {
+// Round function using math module
+@function round($number, $decimals: 0) {
   $n: 1;
 
   @if $decimals > 0 {
@@ -17,7 +17,7 @@ $default-max-bp: 1440px;
 }
 
 
-@ function rem($px) {
+@function rem($px) {
   $rems: math.div($px, 16px) * 1rem;
 
   @return $rems;
@@ -25,7 +25,7 @@ $default-max-bp: 1440px;
 
 // Convert px to rem
 
-@ function px-to-rem($px) {
+@function px-to-rem($px) {
   @if math.unit($px) != "px" {
     @error "Expected px unit but got #{unit($px)}";
   }
@@ -34,11 +34,11 @@ $default-max-bp: 1440px;
 }
 
 // Alias for convenience
-@ function rem($px) {
+@function rem($px) {
   @return px-to-rem($px);
 }
 
-@ function fluid($min-size,
+@function fluid($min-size,
   $max-size,
   $min-breakpoint: $default-min-bp,
   $max-breakpoint: $default-max-bp,

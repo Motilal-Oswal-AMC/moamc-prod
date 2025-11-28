@@ -3,20 +3,8 @@ import {
   div, ul, li, p, input, label, button, img,
 } from '../../scripts/dom-helpers.js';
 import { myAPI, generateAppId } from '../../scripts/scripts.js';
-import { createModal } from '../modal/modal.js';
 
-async  function popup(param) {
-  // Create NEW container for the modal
-  const videoContainer = document.createElement('div');
-  videoContainer.append(param);
-  // Open Modal
-  const { showModal } = await createModal([videoContainer]);
-  showModal();
-}
-export default  function decorate(block) {
-  const delay = (ms) => new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
+export default function decorate(block) {
   const wealthModalData = Array.from(block.children);
   const wealthModal = wealthModalData[0];
 
@@ -114,15 +102,21 @@ export default  function decorate(block) {
   const assocDrop = assocDiv.querySelector('.assoc-drop');
   const arrow = assocDiv.querySelector('.dropdown-arrow');
   const formDropdownList = assocDiv.querySelectorAll('.assoc-drop li');
+  const labelevent = wealthModal.querySelector('.associated-drop');
 
-   function toggleDropdown(e) {
+  function toggleDropdown(e) {
     e.stopPropagation();
+    if (e.target.closest('ul')) {
+      return false;
+    }
     assocDiv.classList.toggle('active');
     assocDrop.classList.toggle('open');
+    return e;
   }
 
   assocInput.addEventListener('click', toggleDropdown);
   arrow.addEventListener('click', toggleDropdown);
+  labelevent.addEventListener('click', toggleDropdown);
 
   assocDrop.querySelectorAll('li').forEach((liarg) => {
     liarg.addEventListener('click', () => {
@@ -182,12 +176,12 @@ export default  function decorate(block) {
   const fields = [nameInput, emailInput, phoneInput, assocInput];
   const touchedFields = new Set();
 
-   function validateForm() {
+  function validateForm() {
     // Ensure all fields are validated, including the associated dropdown
     return fields.every((f) => dataMapMoObj.validateField(f));
   }
 
-   function toggleSubmitButton() {
+  function toggleSubmitButton() {
     // FIX: removed hasAttribute('readonly') logic that was incorrectly marking assocInput as filled
     const allFilled = fields.every((f) => f.value.trim() !== '');
     const allValid = fields
@@ -198,7 +192,7 @@ export default  function decorate(block) {
   }
   dataMapMoObj.toggleSubmitButton = toggleSubmitButton;
 
-   function toggleErrorIcon(inputarg, isValid) {
+  function toggleErrorIcon(inputarg, isValid) {
     const icon = inputarg.parentElement.querySelector('.error-icon');
     if (!icon) return;
     if (!isValid && inputarg.value.trim() !== '') icon.style.display = 'inline';
@@ -213,14 +207,11 @@ export default  function decorate(block) {
     };
   }
 
-  delay(800).then(() => {
-    const thankYouScreen = document.querySelector('.modal-content .thank-you-screen');
-
-    if (thankYouScreen) {
-
-    }
-  });
-  async  function validateField(inputarg) {
+  // delay(800).then(() => {
+  //   const thankYouScreen = document.querySelector('.modal-content .thank-you-screen');
+  //   if (thankYouScreen) {}
+  // });
+  async function validateField(inputarg) {
     const nameError = wealthModal.querySelector('.name-error');
     const emailError = wealthModal.querySelector('.email-error');
     const phoneError = wealthModal.querySelector('.num-error');
@@ -228,10 +219,10 @@ export default  function decorate(block) {
     let valid = true;
 
     if (inputarg.classList.contains('name-inp')) {
-      const nameRegex = /^[a-zA-Z\s]*$/;
+      const nameRegex = /^[A-Za-z]+(?:[ '-][A-Za-z]+)*$/;
       if (inputarg.value.trim() && !nameRegex.test(inputarg.value.trim())) {
         valid = false;
-        nameError.textContent = 'Only letters and spaces allowed.';
+        nameError.textContent = 'Please enter valid name.';
       } else nameError.textContent = '';
     }
 
@@ -241,6 +232,9 @@ export default  function decorate(block) {
       const emailRegex = /^(?!.*\.\.)(?!.*\.$)(?!^\.)[a-zA-Z0-9]+(?:[._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$/;
       if (inputarg.value.trim() && !emailRegex.test(inputarg.value.trim())) {
         valid = false;
+        const act = inputarg.closest('.ragis-lab-btn').querySelector('.btn-mand .btn');
+        act.classList.remove('active');
+        act.setAttribute('disabled', true);
         emailError.textContent = 'Please enter a valid email.';
       } else emailError.textContent = '';
     }
@@ -250,6 +244,9 @@ export default  function decorate(block) {
       if (inputarg.value.trim() && !phoneRegex.test(inputarg.value.trim())) {
         valid = false;
         phoneError.textContent = 'Enter a valid 10-digit Indian number.';
+        const act = inputarg.closest('.ragis-lab-btn').querySelector('.btn-mand .btn');
+        act.classList.remove('active');
+        act.setAttribute('disabled', true);
       } else phoneError.textContent = '';
     }
 
@@ -257,6 +254,9 @@ export default  function decorate(block) {
       if (!inputarg.value.trim()) {
         valid = false;
         assocError.textContent = 'Please select an association.';
+        const act = inputarg.closest('.ragis-lab-btn').querySelector('.btn-mand .btn');
+        act.classList.remove('active');
+        act.setAttribute('disabled', true);
       } else assocError.textContent = '';
     }
     inputarg.classList.toggle('error', !valid && inputarg.value.trim() !== '');
@@ -296,6 +296,16 @@ export default  function decorate(block) {
 
   dataMapMoObj.addIndexed(block.closest('main').querySelector('.thank-you-screen'));
   block.closest('main').querySelectorAll('.thank-you-screen p')[2].style.display = 'none';
+  const moclosse = block.closest('main').querySelector('.thank-you-screen');
+  if (moclosse.querySelector('.thank-you-scr-sec5 img') !== null) {
+    moclosse.querySelector('.thank-you-scr-sec5 img').addEventListener('click', () => {
+      moclosse.style.display = 'none';
+    });
+  }
+  moclosse.querySelector('.thank-you-scr-sec4 a').removeAttribute('href');
+  moclosse.querySelector('.thank-you-scr-sec4').addEventListener('click', () => {
+    moclosse.style.display = 'none';
+  });
   submitButton.addEventListener('click', async (e) => {
     e.preventDefault();
     fields.forEach((f) => touchedFields.add(f));
@@ -319,22 +329,54 @@ export default  function decorate(block) {
           'Content-Type': 'application/json',
           'X-Encrypted': 'N',
           appid: generateAppId(),
+          'X-Lead-Encrypted': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
         };
 
-        const response = await myAPI(
-          'POST',
-          'https://mf.moamc.com/ums/api/SaveLead/create-leads',
-          objreq,
-          headers,
-        );
+        let response;
+        if (window.location.href.includes('https://stage.motilaloswalwcs.com/')) {
+          response = await myAPI(
+            'POST',
+            'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
+            objreq,
+            headers,
+          );
+        } else if (window.location.href.includes('motilal-oswal-amc.aem.live')) {
+          response = await myAPI(
+            'POST',
+            // 'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
+            'https://mf.moamc.com/ums/api/SaveLead/create-leads',
+            objreq,
+            headers,
+          );
+        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/')) {
+          response = await myAPI(
+            'POST',
+            'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
+            objreq,
+            headers,
+          );
+        } else {
+          response = await myAPI(
+            'POST',
+            'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
+            objreq,
+            headers,
+          );
+        }
 
         const result = await response; // .json();
         // console.log('API Response:', result);
 
-        if (result) {
+        if (result.code !== 400) {
+          block.closest('main').querySelector('.thank-you-screen').style.display = 'flex';
           // alert
           dataMapMoObj.msgError.innerText = '';
-          dataMapMoObj.msgError.innerText = 'Your details have been submitted successfully!';
+          dataMapMoObj.msgError.innerText = 'Your request for report has been successfully  received.';
+          dataMapMoObj.texterr = block.closest('main')
+            .querySelector('.thank-you-screen .thank-you-scr-cont1 .thank-you-scr-sec3');
+          dataMapMoObj.texterr.style.display = 'block';
+          dataMapMoObj.texterr.textContent = '';
+          dataMapMoObj.texterr.textContent = `Reports will be shared via email at: ${dataMapMoObj.autoMaskEmail(emailInput.value)}`;
           // Reset form
           fields.forEach((f) => {
             f.value = '';
@@ -345,6 +387,8 @@ export default  function decorate(block) {
           toggleSubmitButton();
           block.querySelector('.associated-drop .error-msg').textContent = '';
         } else {
+          block.closest('main').querySelectorAll('.thank-you-screen p')[2].style.display = 'none';
+          block.closest('main').querySelector('.thank-you-screen').style.display = 'flex';
           dataMapMoObj.msgError.innerText = '';
           dataMapMoObj.msgError.innerText = `Something went wrong: ${result.message || 'Unknown error'}`;
           // alert
@@ -352,12 +396,22 @@ export default  function decorate(block) {
         }
       } catch (error) {
         // console.error('API Error:', error);
+        block.closest('main').querySelector('.thank-you-screen').style.display = 'flex';
+        block.closest('main').querySelectorAll('.thank-you-screen p')[2].style.display = 'none';
         dataMapMoObj.msgError.innerText = '';
         dataMapMoObj.msgError.innerText = 'Failed to submit form. Please try again later.';
       }
     } else {
       toggleSubmitButton();
     }
+    // const closeElements = modal.querySelectorAll('.thank-you-scr-sec4');
+    // closeElements.forEach((el) => {
+    //   el.addEventListener('click', () => {
+    //     modal.remove();
+    //   });
+    // });
+
+    // document.body.append(modal);
   });
 
   block.closest('.wealth-register')

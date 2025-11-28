@@ -2,7 +2,7 @@
  * Decorates the moedge-article-video block.
  * @param {Element} block The block element
  */
-export default  function decorate(block) {
+export default function decorate(block) {
   const mainArticle1 = block.querySelector('.mainarticle1');
   const mainArticle2 = block.querySelector('.mainarticle2');
 

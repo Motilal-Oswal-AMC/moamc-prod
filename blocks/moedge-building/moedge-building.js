@@ -1,6 +1,6 @@
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default  function decorate(block) {
+export default function decorate(block) {
   // --- 1. Add Indexed Classes ---
   dataMapMoObj.CLASS_PREFIXES = [
     'moedge-build-cont',
@@ -109,7 +109,7 @@ export default  function decorate(block) {
   // }
 
   /**
-   * Helper  function to create pagination buttons and logic.
+   * Helper function to create pagination buttons and logic.
    * @param {Element} block The main block element.
    * @param {Array<Element>} items An array of all card items.
    * @param {number} itemsPerPage The number of items to show per page.

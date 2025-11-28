@@ -8,7 +8,7 @@ import { img, span } from '../../scripts/dom-helpers.js';
 /**
  * Initializes the scroll-to-top button.
  */
- function initScrollToTop() {
+function initScrollToTop() {
   let scrollBtn = document.querySelector('.scroll-to-top');
 
   if (!scrollBtn) {
@@ -45,7 +45,7 @@ import { img, span } from '../../scripts/dom-helpers.js';
  * Loads and decorates the footer
  * @param {Element} block The footer block element
  */
-export default async  function decorate(block) {
+export default async function decorate(block) {
   const mainBlock = block.closest('body');
   const download = mainBlock.querySelector('main .download');
   if (mainBlock.querySelector('header [data-id="wcs-header"]')) {
@@ -217,7 +217,7 @@ export default async  function decorate(block) {
   }
 
   const delay = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
-  async  function removeClassAfterDelay() {
+  async function removeClassAfterDelay() {
     await delay(2000);
     let blokform;
     if (block.querySelector('#form-email-1')) {
@@ -309,7 +309,7 @@ if (container) {
   });
 }
 
-//  function to hide footer on WCS PAGE
+// Function to hide footer on WCS PAGE
 
 const currentPath = window.location.pathname;
 
@@ -338,4 +338,4 @@ if (currentPath.includes(targetPath)) {
   });
 }
 
-// Code End  function to hide footer on WCS PAGE
+// Code End Function to hide footer on WCS PAGE
