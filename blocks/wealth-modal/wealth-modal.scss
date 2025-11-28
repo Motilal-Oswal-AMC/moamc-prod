@@ -13,13 +13,23 @@
   height: 100vh;
 
   @media (width <=768px) {
-    padding: 36px 16px 32px;
+    // padding: 36px 16px 32px;
+    // position: fixed;
+    // z-index: 11;
+    // bottom: 0;
+    // border-radius: 24px 24px 0 0;
+    // height: 91vh;
+    // max-width: 100%;
+
     position: fixed;
-    z-index: 11;
     bottom: 0;
-    border-radius: 24px 24px 0 0;
-    height: 91vh;
+    z-index: 11;
     max-width: 100%;
+    width: 100%;
+    max-height: 508px;
+    height: 100%;
+    border-radius: 32px 32px 0 0;
+    padding: 48px 16px 32px;
   }
 
   .wealth-modal-wrapper {
@@ -33,7 +43,7 @@
       .cross-btn {
         position: absolute;
         top: 12px;
-        right: 14px;
+        right: 12px;
         width: 24px;
         height: 24px;
         cursor: pointer;
@@ -397,7 +407,7 @@
         margin-top: 20px;
 
         @include media(mobile) {
-          margin-top: 8px;
+          margin-top: 0;
         }
 
         p {
@@ -406,13 +416,14 @@
       }
     }
 
-    @media (width <=768px) {
+    @media (width < 769px) {
       border-radius: 32px 32px 0 0;
 
       >.ragis-lab-btn {
         >.rag-lable {
-          margin-bottom: 24px;
-          margin-top: 12px;
+          // margin-bottom: 24px;
+          // margin-top: 12px;
+          margin: 0 0 24px;
           font-size: var(--paragraph-large-regular-size);
         }
 
@@ -421,11 +432,16 @@
         }
       }
 
-      .section.wealth-register {
-        position: fixed;
-        bottom: 0;
-        z-index: 11;
-      }
+      // .section.wealth-register {
+      //   position: fixed;
+      //   bottom: 0;
+      //   z-index: 11;
+      //   width: 100%;
+      //   max-height: 508px;
+      //   height: 100%;
+      //   border-radius: 32px 32px 0 0;
+      //   padding: 48px 16px 32px;
+      // }
     }
   }
 
