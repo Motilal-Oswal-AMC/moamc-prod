@@ -3,7 +3,7 @@
 // //   input
 // // } from '../../scripts/dom-helpers.js';
 
-// export default function decorate(block) {
+// export default  function decorate(block) {
 //   dataMapMoObj.CLASS_PREFIXES = [
 //     'our-experts-cont',
 //     'our-expert-section',
@@ -63,7 +63,7 @@ import dataMapMoObj from '../../scripts/constant.js';
 // import {
 // } from '../../scripts/dom-helpers.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   dataMapMoObj.CLASS_PREFIXES = [
     'our-experts-cont',
     'our-expert-section',

@@ -1,6 +1,6 @@
 // import dataMapMoObj from '../../scripts/constant.js';
 
-// export default function decorate(block) {
+// export default  function decorate(block) {
 //     debugger
 //   const moEdge = block.querySelector('.moedge-building');
 //   if (moEdge) {

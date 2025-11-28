@@ -1,6 +1,6 @@
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   dataMapMoObj.CLASS_PREFIXES = ['global', 'globalsub', 'globalinner', 'globalsubinner'];
   dataMapMoObj.addIndexed(block);
 

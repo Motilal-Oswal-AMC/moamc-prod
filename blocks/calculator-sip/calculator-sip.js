@@ -4,7 +4,7 @@ import {
 import dataCfObj from '../../scripts/dataCfObj.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   // -------------------------------
   // ✅ 1. INITIAL SETUP & STATE
   // -----------------------------
@@ -260,7 +260,7 @@ export default function decorate(block) {
   // ✅ 4. UPDATE VALUES (FINAL)
   // -------------------------------
 
-  function calculateSipMaturity(sipAmount, interestRate, months) {
+   function calculateSipMaturity(sipAmount, interestRate, months) {
     const monthlyRate = interestRate / 12 / 100;
     const futureValue = sipAmount
      * (((1 + monthlyRate) ** months - 1) / monthlyRate)
@@ -268,7 +268,7 @@ export default function decorate(block) {
     return Math.round(futureValue);
   }
 
-  function differenceInMonths(dateLeft, dateRight) {
+   function differenceInMonths(dateLeft, dateRight) {
     const yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
     const monthDiff = dateLeft.getMonth() - dateRight.getMonth();
     const totalMonths = yearDiff * 12 + monthDiff;
@@ -281,7 +281,7 @@ export default function decorate(block) {
     return totalMonths;
   }
 
-  function parseDate(str, format = 'YYYY-MM-DD') {
+   function parseDate(str, format = 'YYYY-MM-DD') {
     const parts = str.split('-'); // handles "13-10-2025" or "13/10/2025"
 
     let day; let month; let
@@ -297,7 +297,7 @@ export default function decorate(block) {
     return new Date(year, month - 1, day);
   }
 
-  function updateValues() {
+   function updateValues() {
     const investedAmountSpan = block.querySelector('.invested-amount-value');
     const currentValueSpan = block.querySelector('.current-value');
     const returnCAGRSpan = block.querySelector('.return-cagr');
@@ -421,7 +421,7 @@ export default function decorate(block) {
   // -------------------------------
   // ✅ 5. TENURE & PLAN OPTIONS
   // -------------------------------
-  function updateTenureOptions(returnsData) {
+   function updateTenureOptions(returnsData) {
     const wrapper = block.querySelector('.tenure-wrapper');
     const optionsContainer = wrapper.querySelector('.select-options');
     const selectedDisplay = wrapper.querySelector('.select-selected');
@@ -457,7 +457,7 @@ export default function decorate(block) {
     }
   }
 
-  function updateReturnRate() {
+   function updateReturnRate() {
     if (!selectedFund) return;
     const targetPlan = selectedFund.planList
       .find((p) => p.planName === planType && p.optionName === planOption);
@@ -471,7 +471,7 @@ export default function decorate(block) {
     updateValues();
   }
 
-  function updatePlanOptions(fund) {
+   function updatePlanOptions(fund) {
     const wrapper = block.querySelector('.custom-select-plan');
     const optionsContainer = wrapper.querySelector('.select-options-plan');
     const selectedDisplay = wrapper.querySelector('.select-selected-plan');
@@ -517,7 +517,7 @@ export default function decorate(block) {
 
   // amountInput.addEventListener('input', updateValues);
   // ✅ ADD THIS NEW HANDLER AND LISTENER
-  function handleAmountInput(e) {
+   function handleAmountInput(e) {
     const inputVal = e.target;
     const inputWrap = block.querySelector('.input-with-symbol');
     // 1. Get the raw number by removing non-digits
@@ -599,7 +599,7 @@ export default function decorate(block) {
     searchWrapper.style.display = 'block';
   });
 
-  function addActive(items) {
+   function addActive(items) {
     if (!items) return;
     items.forEach((i) => i.classList.remove('active'));
     if (currentFocus >= items.length) currentFocus = items.length - 1;

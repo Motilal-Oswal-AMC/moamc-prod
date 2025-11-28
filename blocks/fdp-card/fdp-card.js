@@ -13,11 +13,11 @@ import {
 import dataCfObj from '../../scripts/dataCfObj.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
-function toTitleCase(str) {
+ function toTitleCase(str) {
   return str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-export default function decorate(block) {
+export default  function decorate(block) {
   const mainBlock = block.closest('body');
   mainBlock.querySelector('main').classList.add('top-nave');
   const whyFund = mainBlock.querySelector('main .why-fund');
@@ -124,7 +124,7 @@ export default function decorate(block) {
   }
   const navdaterper = `${navarrdate[0]} ${navarrdate[1]} ${navyear}`;
 
-  function planGrpEvent(param) {
+   function planGrpEvent(param) {
     const tempReturnsec = [];
     const returnValue = [];
     // const valueText = param.target.textContent.trim();
@@ -682,7 +682,7 @@ export default function decorate(block) {
   let currentSelectedText = '';
 
   const left = document.querySelector('.fdp-card-wrapper');
-  function isInsideScrollable(el, stopAt) {
+   function isInsideScrollable(el, stopAt) {
     while (el && el !== stopAt) {
       const style = window.getComputedStyle(el);
       const { overflowY } = style;
@@ -974,15 +974,15 @@ export default function decorate(block) {
     document.querySelector('.item2').append(el);
   });
 
-  (function () {
-    // Function to calculate the correct header offset based on screen size
-    // function getHeaderOffset(targetID) { // targetId
+  ( function () {
+    //  function to calculate the correct header offset based on screen size
+    //  function getHeaderOffset(targetID) { // targetId
     // const dataidStorage = dataMapMoObj.ObjDataidFdp[targetID.getAttribute('data-id')];
     // return window.innerWidth <= 768 ? dataidStorage : 240;
     // }
 
     // Smooth scroll setup with dynamic header offset
-    function setupSmoothScroll(linkSelector) {
+     function setupSmoothScroll(linkSelector) {
       if (window.innerWidth < 900) {
         Array.from(document.querySelectorAll(linkSelector)).forEach((el) => {
           el.classList.remove('active');

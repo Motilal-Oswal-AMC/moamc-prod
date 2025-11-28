@@ -68,7 +68,7 @@ const MumbaiData = {
 
 // --- 2. HELPER & RENDERING FUNCTIONS ---
 
-function renderMap(container, mapUrl) {
+ function renderMap(container, mapUrl) {
   const finalMapUrl = mapUrl || MumbaiData.data.MapURL;
   // if (!finalMapUrl || finalMapUrl.includes('0')) {
   //   container.innerHTML = '<p>Map not available for this location.</p>';
@@ -78,7 +78,7 @@ function renderMap(container, mapUrl) {
     <iframe title="Motilal Oswal Tower Location Map" src="${finalMapUrl}" width="100%" height="100%" style="border:0;border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
 }
 
-function renderDetails(container, data) {
+ function renderDetails(container, data) {
   // console.log(data.data);
 
   const {
@@ -224,7 +224,7 @@ function renderDetails(container, data) {
 // --- 3. CORE LOGIC (Updated for POST request) ---
 // contact US onload API
 
-async function updateContentForCity(city, detailsContainer, mapContainer) {
+async  function updateContentForCity(city, detailsContainer, mapContainer) {
   detailsContainer.innerHTML = '<div class="loading">Loading...</div>';
   mapContainer.innerHTML = '';
 
@@ -254,7 +254,7 @@ async function updateContentForCity(city, detailsContainer, mapContainer) {
     detailsContainer.innerHTML = `<p>Could not load contact information for ${city}.</p>`;
   }
 }
-async function onLoadContactusCities() {
+async  function onLoadContactusCities() {
   if (useLiveApi) {
     try {
       // Create the POST request to the API
@@ -305,7 +305,7 @@ async function onLoadContactusCities() {
 }
 // --- 4. BLOCK INITIALIZATION ---
 
-export default async function decorate(block) {
+export default async  function decorate(block) {
   dataMapMoObj.CLASS_PREFIXES = ['contactmain', 'contactsub', 'contactinner', 'subcontainer'];
   dataMapMoObj.addIndexed(block);
   block.querySelector('.contactmain1').style.display = 'none';
@@ -515,7 +515,7 @@ export default async function decorate(block) {
   const pinCode = block.querySelector('.search-loaction-input');
   const wrapper = block.querySelector('.pincode-wrap');
 
-  function toggleLabel() {
+   function toggleLabel() {
     if (pinCode.value.trim() !== '' || document.activeElement === pinCode) {
       wrapper.classList.add('active');
     } else {

@@ -116,8 +116,8 @@ const dataMapMoObj = {
     const month = months[date.getMonth()];
     const year = date.getFullYear();
 
-    // Function to get the correct ordinal suffix (st, nd, rd, th)
-    // function getOrdinalSuffix(days) {
+    //  function to get the correct ordinal suffix (st, nd, rd, th)
+    //  function getOrdinalSuffix(days) {
     //   if (days > 3 && days < 21) return 'th'; // for teens
     //   switch (days % 10) {
     //     case 1: return 'st';
@@ -167,7 +167,7 @@ const dataMapMoObj = {
     paginationWrapper.className = 'pagination-wrapper';
 
     // --- CORE LOGIC: Adjustable Dots ---
-    function generatePaginationList(current, total) {
+     function generatePaginationList(current, total) {
     // A. IF 5 OR FEWER PAGES: Show everything, no dots
       if (total <= 5) {
         return Array.from({ length: total }, (_, i) => i + 1);
@@ -193,7 +193,7 @@ const dataMapMoObj = {
     }
 
     // --- CONTROLLER ---
-    function goToPage(page) {
+     function goToPage(page) {
       currentPage = page;
       const start = (page - 1) * itemsPerPage;
       const end = start + itemsPerPage;

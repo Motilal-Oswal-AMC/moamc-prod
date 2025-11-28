@@ -10,7 +10,7 @@ import objData from '../../scripts/dataCfObj.js';
 import dataMapMoObj from '../../scripts/constant.js';
 // import myAPI from '../../scripts/scripts.js';
 
-export default async function decorate(block) {
+export default async  function decorate(block) {
   let fundManagers;
   if (dataMapMoObj.fundManagerDetails.length !== 0) {
     fundManagers = dataMapMoObj.fundManagerDetails;

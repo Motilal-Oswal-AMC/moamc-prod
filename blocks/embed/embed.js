@@ -96,7 +96,7 @@ export const loadEmbed = (block, link, autoplay) => {
   block.classList.add('embed-is-loaded');
 };
 
-export default function decorate(block) {
+export default  function decorate(block) {
   const placeholder = block.querySelector('picture');
   const link = block.querySelector('a').href;
   if (!block.closest('.media-coverage') && !block.closest('.prev-studies-wrapper')) {

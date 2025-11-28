@@ -1,6 +1,6 @@
 /* eslint-disable */
-export function decorateRichtext(container = document) {
-  function deleteInstrumentation(element) {
+export  function decorateRichtext(container = document) {
+   function deleteInstrumentation(element) {
     delete element.dataset.richtextResource;
     delete element.dataset.richtextProp;
     delete element.dataset.richtextFilter;

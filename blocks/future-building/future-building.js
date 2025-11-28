@@ -6,7 +6,7 @@ import {
   input,
 } from '../../scripts/dom-helpers.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   if (window.location.href.includes('author')) {
     return 1;
   }

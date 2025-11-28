@@ -12,7 +12,7 @@
 console.log("code prod");
 
 /* eslint-env browser */
-function sampleRUM(checkpoint, data) {
+ function sampleRUM(checkpoint, data) {
   // eslint-disable-next-line max-len
   const timeShift = () => (window.performance
     ? window.performance.now()
@@ -140,7 +140,7 @@ function sampleRUM(checkpoint, data) {
 /**
  * Setup block utils.
  */
-function setup() {
+ function setup() {
   window.hlx = window.hlx || {};
   window.hlx.RUM_MASK_URL = 'full';
   window.hlx.RUM_MANUAL_ENHANCE = true;
@@ -164,7 +164,7 @@ function setup() {
  * Auto initialization.
  */
 
-function init() {
+ function init() {
   setup();
   sampleRUM.collectBaseURL = window.origin;
   sampleRUM();
@@ -175,7 +175,7 @@ function init() {
  * @param {string} name The unsanitized string
  * @returns {string} The class name
  */
-function toClassName(name) {
+ function toClassName(name) {
   return typeof name === 'string'
     ? name
       .toLowerCase()
@@ -190,7 +190,7 @@ function toClassName(name) {
  * @param {string} name The unsanitized string
  * @returns {string} The camelCased name
  */
-function toCamelCase(name) {
+ function toCamelCase(name) {
   return toClassName(name).replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 }
 
@@ -200,7 +200,7 @@ function toCamelCase(name) {
  * @returns {object} The block config
  */
 // eslint-disable-next-line import/prefer-default-export
-function readBlockConfig(block) {
+ function readBlockConfig(block) {
   const config = {};
   block.querySelectorAll(':scope > div').forEach((row) => {
     if (row.children) {
@@ -242,7 +242,7 @@ function readBlockConfig(block) {
  * Loads a CSS file.
  * @param {string} href URL to the CSS file
  */
-async function loadCSS(href) {
+async  function loadCSS(href) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
@@ -262,7 +262,7 @@ async function loadCSS(href) {
  * @param {string} src URL to the JS file
  * @param {Object} attrs additional optional attributes
  */
-async function loadScript(src, attrs) {
+async  function loadScript(src, attrs) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > script[src="${src}"]`)) {
       const script = document.createElement('script');
@@ -288,7 +288,7 @@ async function loadScript(src, attrs) {
  * @param {Document} doc Document object to query for metadata. Defaults to the window's document
  * @returns {string} The metadata value(s)
  */
-function getMetadata(name, doc = document) {
+ function getMetadata(name, doc = document) {
   const attr = name && name.includes(':') ? 'property' : 'name';
   const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)]
     .map((m) => m.content)
@@ -304,7 +304,7 @@ function getMetadata(name, doc = document) {
  * @param {Array} [breakpoints] Breakpoints and corresponding params (eg. width)
  * @returns {Element} The picture element
  */
-function createOptimizedPicture(
+ function createOptimizedPicture(
   src,
   alt = '',
   eager = false,
@@ -358,7 +358,7 @@ function createOptimizedPicture(
 /**
  * Set template (page structure) and theme (page styles).
  */
-function decorateTemplateAndTheme() {
+ function decorateTemplateAndTheme() {
   const addClasses = (element, classes) => {
     classes.split(',').forEach((c) => {
       element.classList.add(toClassName(c.trim()));
@@ -374,7 +374,7 @@ function decorateTemplateAndTheme() {
  * Wrap inline text content of block cells within a <p> tag.
  * @param {Element} block the block element
  */
-function wrapTextNodes(block) {
+ function wrapTextNodes(block) {
   const validWrappers = [
     'P',
     'PRE',
@@ -418,7 +418,7 @@ function wrapTextNodes(block) {
  * Decorates paragraphs containing a single link as buttons.
  * @param {Element} element container element
  */
-function decorateButtons(element) {
+ function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {
@@ -461,7 +461,7 @@ function decorateButtons(element) {
  * @param {string} [prefix] prefix to be added to icon src
  * @param {string} [alt] alt text to be added to icon
  */
-function decorateIcon(span, prefix = '', alt = '') {
+ function decorateIcon(span, prefix = '', alt = '') {
   const iconName = Array.from(span.classList)
     .find((c) => c.startsWith('icon-'))
     .substring(5);
@@ -480,7 +480,7 @@ function decorateIcon(span, prefix = '', alt = '') {
  * @param {Element} [element] Element containing icons
  * @param {string} [prefix] prefix to be added to icon the src
  */
-function decorateIcons(element, prefix = '') {
+ function decorateIcons(element, prefix = '') {
   const icons = element.querySelectorAll('span.icon');
   icons.forEach((span) => {
     decorateIcon(span, prefix);
@@ -491,7 +491,7 @@ function decorateIcons(element, prefix = '') {
  * Decorates all sections in a container element.
  * @param {Element} main The container element
  */
-function decorateSections(main) {
+ function decorateSections(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
     const wrappers = [];
     let defaultContent = false;
@@ -535,7 +535,7 @@ function decorateSections(main) {
  * @returns {object} Window placeholders object
  */
 //   -next-line import/prefer-default-export
-// async function fetchPlaceholders(prefix = 'default') {
+// async  function fetchPlaceholders(prefix = 'default') {
 //   window.placeholders = window.placeholders || {};
 //   if (!window.placeholders[prefix]) {
 //     window.placeholders[prefix] = new Promise((resolve) => {
@@ -571,7 +571,7 @@ function decorateSections(main) {
  * @param {string} blockName name of the block
  * @param {*} content two dimensional array or string or object of content
  */
-function buildBlock(blockName, content) {
+ function buildBlock(blockName, content) {
   const table = Array.isArray(content) ? content : [[content]];
   const blockEl = document.createElement('div');
   // build image block nested div structure
@@ -601,7 +601,7 @@ function buildBlock(blockName, content) {
  * Loads JS and CSS for a block.
  * @param {Element} block The block element
  */
-async function loadBlock(block) {
+async  function loadBlock(block) {
   const status = block.dataset.blockStatus;
   if (status !== 'loading' && status !== 'loaded') {
     block.dataset.blockStatus = 'loading';
@@ -639,7 +639,7 @@ async function loadBlock(block) {
  * Decorates a block.
  * @param {Element} block The block element
  */
-function decorateBlock(block) {
+ function decorateBlock(block) {
   const shortBlockName = block.classList[0];
   if (shortBlockName) {
     block.classList.add('block');
@@ -657,7 +657,7 @@ function decorateBlock(block) {
  * Decorates all blocks in a container element.
  * @param {Element} main The container element
  */
-function decorateBlocks(main) {
+ function decorateBlocks(main) {
   main.querySelectorAll('div.section > div > div').forEach(decorateBlock);
 }
 
@@ -666,7 +666,7 @@ function decorateBlocks(main) {
  * @param {Element} header header element
  * @returns {Promise}
  */
-async function loadHeader(header) {
+async  function loadHeader(header) {
   const headerBlock = buildBlock('header', '');
   header.append(headerBlock);
   decorateBlock(headerBlock);
@@ -678,7 +678,7 @@ async function loadHeader(header) {
  * @param footer footer element
  * @returns {Promise}
  */
-async function loadFooter(footer) {
+async  function loadFooter(footer) {
   const footerBlock = buildBlock('footer', '');
   footer.append(footerBlock);
   decorateBlock(footerBlock);
@@ -689,7 +689,7 @@ async function loadFooter(footer) {
  * Wait for Image.
  * @param {Element} section section element
  */
-async function waitForFirstImage(section) {
+async  function waitForFirstImage(section) {
   const lcpCandidate = section.querySelector('img');
   if (lcpCandidate) {
     // Check if image is in the first fold (viewport)
@@ -726,7 +726,7 @@ async function waitForFirstImage(section) {
  * @param {Element} section The section element
  */
 
-async function loadSection(section, loadCallback) {
+async  function loadSection(section, loadCallback) {
   const status = section.dataset.sectionStatus;
   if (!status || status === 'initialized') {
     section.dataset.sectionStatus = 'loading';
@@ -746,7 +746,7 @@ async function loadSection(section, loadCallback) {
  * @param {Element} element The parent element of sections to load
  */
 
-async function loadSections(element) {
+async  function loadSections(element) {
   const sections = [...element.querySelectorAll('div.section')];
   for (let i = 0; i < sections.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop

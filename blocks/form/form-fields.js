@@ -1,7 +1,7 @@
 /*    */
 import { toClassName } from '../../scripts/aem.js';
 
-function createFieldWrapper(fd) {
+ function createFieldWrapper(fd) {
   const fieldWrapper = document.createElement('div');
   if (fd.Style) fieldWrapper.className = fd.Style;
   fieldWrapper.classList.add('field-wrapper', `${fd.Type}-wrapper`);
@@ -12,7 +12,7 @@ function createFieldWrapper(fd) {
 }
 
 const ids = [];
-function generateFieldId(fd, suffix = '') {
+ function generateFieldId(fd, suffix = '') {
   const slug = toClassName(`form-${fd.Name}${suffix}`);
   ids[slug] = ids[slug] || 0;
   const idSuffix = ids[slug] ? `-${ids[slug]}` : '';
@@ -20,7 +20,7 @@ function generateFieldId(fd, suffix = '') {
   return `${slug}${idSuffix}`;
 }
 
-function createLabel(fd) {
+ function createLabel(fd) {
   const label = document.createElement('label');
   label.id = generateFieldId(fd, '-label');
   label.textContent = fd.Label || fd.Name;
@@ -31,7 +31,7 @@ function createLabel(fd) {
   return label;
 }
 
-function setCommonAttributes(field, fd) {
+ function setCommonAttributes(field, fd) {
   field.id = fd.Id;
   field.name = fd.Name;
   field.required = fd.Mandatory && (fd.Mandatory.toLowerCase() === 'true' || fd.Mandatory.toLowerCase() === 'x');
@@ -227,7 +227,7 @@ const FIELD_CREATOR_FUNCTIONS = {
   radio: createRadio,
 };
 
-export default async function createField(fd, form) {
+export default async  function createField(fd, form) {
   fd.Id = fd.Id || generateFieldId(fd);
   const type = fd.Type.toLowerCase();
   const createFieldFunc = FIELD_CREATOR_FUNCTIONS[type] || createInput;

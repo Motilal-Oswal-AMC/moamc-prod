@@ -27,7 +27,7 @@ console.log('f1 code');
  * @param {Element} from the element to copy attributes from
  * @param {Element} to the element to copy attributes to
  */
-function wrapImgsInLinks(container) {
+ function wrapImgsInLinks(container) {
   const pictures = container.querySelectorAll('picture');
   pictures.forEach((pic) => {
     const link = pic.nextElementSibling;
@@ -38,7 +38,7 @@ function wrapImgsInLinks(container) {
   });
 }
 
-export function moveAttributes(from, to, attributes) {
+export  function moveAttributes(from, to, attributes) {
   let attrs = attributes;
   if (!attrs) {
     attrs = [...from.attributes].map(({ nodeName }) => nodeName);
@@ -52,7 +52,7 @@ export function moveAttributes(from, to, attributes) {
   });
 }
 
-export function moveInstrumentation(from, to) {
+export  function moveInstrumentation(from, to) {
   moveAttributes(
     from,
     to,
@@ -64,7 +64,7 @@ export function moveInstrumentation(from, to) {
   );
 }
 
-async function loadFonts() {
+async  function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
   try {
     if (!window.location.hostname.includes('localhost')) {
@@ -75,7 +75,7 @@ async function loadFonts() {
   }
 }
 
-// function autolinkModals(element) {
+//  function autolinkModals(element) {
 //   element.addEventListener('click', async (e) => {
 //     const origin = e.target.closest('a');
 
@@ -91,7 +91,7 @@ async function loadFonts() {
 
 // loadEmbed(block,link)
 
-function autolinkVideo(element) {
+ function autolinkVideo(element) {
   const origin = element.querySelector('a');
 
   if (origin && origin.href && origin.href.includes('/www.youtube.com/')) {
@@ -107,7 +107,7 @@ function autolinkVideo(element) {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+ function buildAutoBlocks() {
   try {
     // decorateBreadcrumbs();
     // TODO: add auto block, if needed
@@ -119,7 +119,7 @@ function buildAutoBlocks() {
 /**
  * Decorate <main> content
  */
-export function decorateMain(main) {
+export  function decorateMain(main) {
   decorateButtons(main);
   decorateIcons(main);
   // buildAutoBlocks(main);
@@ -130,7 +130,7 @@ export function decorateMain(main) {
 /**
  * Load Fragment (keep as is)
  */
-export async function loadFragment(path) {
+export async  function loadFragment(path) {
   if (path && path.startsWith('/')) {
     const cleanPath = path.replace(/(\.plain)?\.html/, '');
     const resp = await fetch(`${cleanPath}.plain.html`);
@@ -157,7 +157,7 @@ export async function loadFragment(path) {
   return null;
 }
 
-export default async function decorateFragment(block) {
+export default async  function decorateFragment(block) {
   const link = block.querySelector('a');
   const path = link ? link.getAttribute('href') : block.textContent.trim();
   const fragment = await loadFragment(path);
@@ -174,7 +174,7 @@ export default async function decorateFragment(block) {
 /**
  * Auto-block for fragment & YouTube embeds (keep as is)
  */
-function decorateAutoBlock(element) {
+ function decorateAutoBlock(element) {
   element.querySelectorAll('a').forEach((origin) => {
     if (origin && origin.href && origin.href.includes('/fragment/')) {
       const parent = origin.parentElement;
@@ -192,7 +192,7 @@ function decorateAutoBlock(element) {
   });
 }
 
-async function loadEager(doc) {
+async  function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
@@ -213,7 +213,7 @@ async function loadEager(doc) {
   }
 }
 
-async function loadLazy(doc) {
+async  function loadLazy(doc) {
   autolinkVideo(doc);
   const main = doc.querySelector('main');
   if (
@@ -257,7 +257,7 @@ async function loadLazy(doc) {
 const pad = (num) => String(num).padStart(2, '0');
 
 /* ---------------- Time Left ---------------- */
-export function getTimeLeft(targetDateStr) {
+export  function getTimeLeft(targetDateStr) {
   const diffMs = new Date(targetDateStr) - Date.now();
 
   if (diffMs <= 0) return "Time's up!";
@@ -271,7 +271,7 @@ export function getTimeLeft(targetDateStr) {
 }
 
 /* ---------------- Intersection Observer ---------------- */
-export function initObserver(block, callback) {
+export  function initObserver(block, callback) {
   const observer = new IntersectionObserver((entries, obs) => {
     if (entries.some((e) => e.isIntersecting)) {
       obs.disconnect();
@@ -282,7 +282,7 @@ export function initObserver(block, callback) {
 }
 
 /* ---------------- Evaluate By Days ---------------- */
-export function evaluateByDays(pastDateStr) {
+export  function evaluateByDays(pastDateStr) {
   const diffDays = Math.floor((Date.now() - new Date(pastDateStr)) / 86400000); // 1000*60*60*24
 
   if (diffDays < 0) return 'Date is in the future';
@@ -292,7 +292,7 @@ export function evaluateByDays(pastDateStr) {
 }
 
 /* ---------------- Wishlist ---------------- */
-export function wishlist() {
+export  function wishlist() {
   const stars = [...document.querySelectorAll('.star-filled')];
   dataMapMoObj.schstar = stars.map((el) => el.getAttribute('schcode'));
 
@@ -307,7 +307,7 @@ export function wishlist() {
 
 /* ---------------- Fetch Call ---------------- */
 // eslint-disable-next-line default-param-last
-export async function myAPI(method, url, body = null, customHeaders = {}) {
+export async  function myAPI(method, url, body = null, customHeaders = {}) {
   const options = { method };
 
   // 1. Create a clean headers object.
@@ -351,7 +351,7 @@ export async function myAPI(method, url, body = null, customHeaders = {}) {
   }
 }
 
-export function generateAppId() {
+export  function generateAppId() {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZ';
   let appId = '';
   for (let i = 0; i < 36; i += 1) {
@@ -361,7 +361,7 @@ export function generateAppId() {
   // return "877C010EM8A9CA4820M987BCB394B48563BE";
 }
 
-// export async function myAPI(method, url, body = null, header) {
+// export async  function myAPI(method, url, body = null, header) {
 //   const options = { method };
 //   if (body) {
 //     options.headers = header !== undefined ? header : { 'Content-Type': 'application/json' };
@@ -402,11 +402,11 @@ const initComponent = (selector, prefixes) => {
   }
 };
 
-function loadDelayed() {
+ function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
 }
 
-async function loadPage() {
+async  function loadPage() {
   await loadEager(document);
   await loadLazy(document);
 
@@ -433,7 +433,7 @@ initComponent('.welcome-component', [
   'welcomeaqweactmain',
 ]);
 
-export async function decorateForm(block) {
+export async  function decorateForm(block) {
   const formLink = block.querySelector('a').href;
   const submitLink = '/api';
   // if (!formLink || !submitLink) return;
@@ -456,7 +456,7 @@ export async function decorateForm(block) {
   });
 }
 
-export function loadAutoBlock(doc) {
+export  function loadAutoBlock(doc) {
   doc.querySelectorAll('a').forEach((ael) => {
     if (ael && ael.href && ael.href.includes('/forms/')) {
       decorateForm(ael.parentElement);
@@ -529,7 +529,7 @@ if (calculatorsCard != null) {
 
 // *Calculators card  End *//
 // // article
-function articleStructure() {
+ function articleStructure() {
   // Investor Education article left and right wrapper
   if (
     window.location.href.includes('/investor-education/all-articles/')

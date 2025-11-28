@@ -3,7 +3,7 @@ import { a, li, ul } from './dom-helpers.js';
 // import dataMapMoObj from '../scripts/constant.js';
 // import formBlock from '../blocks/form/form.js';
 
-function decorateBreadcrumbItems(title, url, icon = '') {
+ function decorateBreadcrumbItems(title, url, icon = '') {
   // return li(a({ href: url }, title));
   if (icon) {
     const link = a({ href: url });
@@ -18,7 +18,7 @@ function decorateBreadcrumbItems(title, url, icon = '') {
 }
 
 // breadcrumbs use chat gpt2
-export default async function createBreadcrumbs() {
+export default async  function createBreadcrumbs() {
   // 1. Get breadcrumbs_title from <meta> or fallback to document.title
   const segments = window.location.pathname.split('/').filter(Boolean);
 
@@ -59,7 +59,7 @@ export default async function createBreadcrumbs() {
   );
 }
 
-// async function decorateBreadcrumbs() {
+// async  function decorateBreadcrumbs() {
 //   try {
 //     if (getMetadata('breadcrumbs') === 'true') {
 //       const breadcrumb = await createBreadcrumbs();
@@ -76,7 +76,7 @@ export default async function createBreadcrumbs() {
 
 // decorateBreadcrumbs();
 
-async function decorateBreadcrumbs() {
+async  function decorateBreadcrumbs() {
   try {
     if (getMetadata('breadcrumbs') === 'true') {
       const breadcrumb = await createBreadcrumbs();
@@ -111,7 +111,7 @@ async function decorateBreadcrumbs() {
   }
 }
 
-// (Assumes createBreadcrumbs function is defined elsewhere as in previous examples)
+// (Assumes createBreadcrumbs  function is defined elsewhere as in previous examples)
 decorateBreadcrumbs();
 
 const newSection = document.querySelector('.moedge-article-main .article-sub-left.articlesub1 .leftartsub1');
@@ -145,7 +145,7 @@ if (window.innerWidth <= 767) {
   //
 }
 
-// function articleStructure() {
+//  function articleStructure() {
 //    // Investor Education article left and right wrapper
 //   if (window.location.href.includes('/investor-education/all-articles/')
 // || window.location.href.includes('/motilal-oswal-edge/article-details')) {

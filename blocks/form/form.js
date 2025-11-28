@@ -2,7 +2,7 @@
 import createField from './form-fields.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
-export async function createForm(formHref, submitHref) {
+export async  function createForm(formHref, submitHref) {
   const {
     pathname,
   } = new URL(formHref);
@@ -30,7 +30,7 @@ export async function createForm(formHref, submitHref) {
   return form;
 }
 
-function generatePayload(form) {
+ function generatePayload(form) {
   const payload = {};
 
   [...form.elements].forEach((field) => {
@@ -47,7 +47,7 @@ function generatePayload(form) {
   return payload;
 }
 
-async function handleSubmit(form) {
+async  function handleSubmit(form) {
   if (form.getAttribute('data-submitting') === 'true') return;
 
   const submit = form.querySelector('button[type="submit"]');
@@ -82,7 +82,7 @@ async function handleSubmit(form) {
   }
 }
 
-export default async function decorate(block) {
+export default async  function decorate(block) {
   const links = [...block.querySelectorAll('a')].map((a) => a.href);
   const formLink = links.find((link) => link.startsWith(window.location.origin) && link.endsWith('.json'));
   // const submitLink = links.find((link) => link !== formLink);
@@ -121,7 +121,7 @@ export default async function decorate(block) {
   }
 
   // Change select id and its label
-  function updateSelectIds(newSelectId, newLabelId) {
+   function updateSelectIds(newSelectId, newLabelId) {
     const selectEl = block.querySelector('form .countrycode select');
     const labelEl = block.querySelector('form .countrycode label');
     if (selectEl && labelEl) {

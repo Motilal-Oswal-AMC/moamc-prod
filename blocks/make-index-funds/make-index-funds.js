@@ -23,7 +23,7 @@ let swiperInstance = null;
 
 /**
  * Creates a single card element.
- * IMPORTANT: This function now appends the icons *after* the main structure is created,
+ * IMPORTANT: This  function now appends the icons *after* the main structure is created,
  * which is a safer pattern for working with `dom-helpers`.
  *
  * @param {object} cardData - The data object for the card.
@@ -32,7 +32,7 @@ let swiperInstance = null;
  * @returns {HTMLElement} The complete card element.
  */
 
-function createCardElement(cardData, brandName, iconsTemplate) {
+ function createCardElement(cardData, brandName, iconsTemplate) {
   // 1. Create the card structure WITHOUT the icons.
   const iconsvg = `${dataMapMoObj.iconsNfo[cardData.risk.riskType.toLowerCase().replaceAll(' ', '-')]}.svg`;
   const mop = `MO_${cardData.schcode}.svg`;
@@ -95,7 +95,7 @@ function createCardElement(cardData, brandName, iconsTemplate) {
  * Sets up the Swiper carousel on the block.
  * @param {HTMLElement} block - The main block element.
  */
-function initSwiper(block) {
+ function initSwiper(block) {
   // Prevent re-initialization
   if (block.classList.contains('swiper-initialized')) return;
 
@@ -139,7 +139,7 @@ function initSwiper(block) {
  * Destroys the Swiper and restores the DOM to a static grid layout.
  * @param {HTMLElement} block - The main block element.
  */
-function destroySwiper(block) {
+ function destroySwiper(block) {
   // Only run if Swiper is actually initialized
   if (!swiperInstance) return;
 
@@ -167,13 +167,13 @@ function destroySwiper(block) {
   block.classList.remove('swiper', 'swiper-initialized');
 }
 
-// --- MAIN DECORATE FUNCTION ---
+// --- MAIN DECORATE  function ---
 
 /**
  * Decorates the 'Make index Funds' block.
  * @param {HTMLElement} block The main block element from the DOM.
  */
-export default function decorate(block) {
+export default  function decorate(block) {
   // 1. Extract templates and data from the initial, author-configured DOM
   const brandName = block.querySelector('p')?.innerText.trim() || 'Motilal Oswal';
   const iconsTemplate = block.querySelector('ul'); // A simpler, more robust selector

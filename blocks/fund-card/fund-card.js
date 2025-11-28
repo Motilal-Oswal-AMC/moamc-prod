@@ -16,10 +16,10 @@ import {
   wishlist,
 } from '../../scripts/scripts.js';
 
-function toTitleCase(str) {
+ function toTitleCase(str) {
   return str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
 }
-export default function decorate(block) {
+export default  function decorate(block) {
   let planFlow = 'Direct';
   if (document.querySelector('.fund-toggle-wrap [type="checkbox"]')) {
     planFlow = document.querySelector('.fund-toggle-wrap [type="checkbox"]')

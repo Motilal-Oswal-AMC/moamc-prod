@@ -3,7 +3,7 @@ import dataMapMoObj from '../../scripts/constant.js';
 //   input
 // } from '../../scripts/dom-helpers.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   dataMapMoObj.CLASS_PREFIXES = [
     'edge-filter-cont',
     'edge-filter-section',

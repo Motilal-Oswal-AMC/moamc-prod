@@ -8,7 +8,7 @@ import {
   ul,
 } from '../../scripts/dom-helpers.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   Array.from(block.children).forEach((el, index) => {
     el.classList.add(`block-item${index + 1}`);
     Array.from(el.children).forEach((elsub, ind) => {
@@ -41,7 +41,7 @@ export default function decorate(block) {
   const DirectPlanlistArr = planObj[0].planList.filter(
     (el) => el.planName === planFlow,
   );
-  function dateFormat(date) {
+   function dateFormat(date) {
     const formattedDate = new Date(date).toLocaleDateString('en-GB', {
       day: '2-digit',
       month: 'short',

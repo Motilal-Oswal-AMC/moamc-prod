@@ -13,7 +13,7 @@ import { initObserver, myAPI } from '../../scripts/scripts.js';
 
 window.am5.addLicense('AM5C-253273928');
 
-export default function decorate(block) {
+export default  function decorate(block) {
   // Extract authored content
   const container = block.closest('.performance-graph-returning-container');
   if (container) {
@@ -55,7 +55,7 @@ export default function decorate(block) {
 
   // ---------- RENDER GRAPH (Corrected & Cleaned) ----------
 
-  function renderGraph(chartData) {
+   function renderGraph(chartData) {
     if (root) {
       root.dispose();
       root = null;
@@ -135,7 +135,7 @@ export default function decorate(block) {
     });
 
     // Custom formatter for x-axis labels
-    // xAxis.get('renderer').labels.template.adapters.add('text', function (text, target) {
+    // xAxis.get('renderer').labels.template.adapters.add('text',  function (text, target) {
     //   const date = new Date(target.dataItem.get('valueX'));
     //   const month = date.toLocaleDateString('en-US', { month: 'short' }).toLowerCase();
     //   const year = date.getFullYear().toString().slice(-2);
@@ -143,7 +143,7 @@ export default function decorate(block) {
     // });
 
     // Alternative approach using a custom formatter:
-    // xAxis.get('renderer').labels.template.set('text', function (target, key) {
+    // xAxis.get('renderer').labels.template.set('text',  function (target, key) {
     //   const date = new Date(target.dataItem.get('valueX'));
     //   const month = date.toLocaleDateString('en-US', { month: 'short' });
     //   const year = date.getFullYear().toString().slice(-2);
@@ -226,8 +226,8 @@ export default function decorate(block) {
     chart.appear(1000, 100);
   }
 
-  // ---------- FILTER FUNCTION ----------
-  function filterChartData(data, filter) {
+  // ---------- FILTER  function ----------
+   function filterChartData(data, filter) {
     if (!data || data.length === 0) return [];
     const sortedData = data.sort(
       (ato, b) => new Date(ato.navdate) - new Date(b.navdate),
@@ -254,7 +254,7 @@ export default function decorate(block) {
   }
 
   // ---------- LOAD DATA ----------
-  async function showGraph(filter) {
+  async  function showGraph(filter) {
     try {
       let parsedChartData;
       if (useLiveAPI) {
@@ -380,7 +380,7 @@ export default function decorate(block) {
   block.append(fundHeader, filterBar, chartDiv1, mobileInvestButton);
 
   // ---------- API CALL (Modernized with fetch) ----------
-  // async function myAPI(method, url, body = null) {
+  // async  function myAPI(method, url, body = null) {
   //   const options = { method };
   //   if (body) {
   //     options.headers = { 'Content-Type': 'application/json' };

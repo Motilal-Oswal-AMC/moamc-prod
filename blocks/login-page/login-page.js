@@ -4,7 +4,7 @@ import {
 import dataMapMoObj from '../../scripts/constant.js';
 import { myAPI } from '../../scripts/scripts.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   const loginImagev2 = block.closest('.login-page-container');
   const logImgeV1 = loginImagev2.querySelector('.login-image-item-wrapper');
   const loginImage = loginImagev2.querySelector('.login-page-wrapper');
@@ -210,13 +210,13 @@ export default function decorate(block) {
   let pansuccessForm;
   let inputs;
   let parentDiv;
-  function setCookie(cname, cvalue, exdays) {
+   function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     const expires = `expires=${d.toUTCString()}`;
     document.cookie = `${cname}=${cvalue};${expires};path=/`;
   }
-  async function getCkycData(paramDtArg) {
+  async  function getCkycData(paramDtArg) {
     try {
       const reqGetckyc = {
         panNo: paramDtArg,
@@ -245,7 +245,7 @@ export default function decorate(block) {
       // console.log(error);
     }
   }
-  async function panDetails(params) {
+  async  function panDetails(params) {
     try {
       const request = {
         name: params.userLogPanNm,
@@ -279,7 +279,7 @@ export default function decorate(block) {
     }
   }
 
-  async function lmsentCall(paramData) {
+  async  function lmsentCall(paramData) {
     try {
       const request = {
         frmdata: `LMS~${paramData.userLogPan}|${paramData.userLogPanNm}|+91${paramData.userLogMoNm}|${paramData.userLogEm}||Mumbai||${paramData.kycflag}|MF New investor|||||||||${paramData.isnri}|`,
@@ -296,7 +296,7 @@ export default function decorate(block) {
     }
   }
 
-  async function modiFyKycApicall(param) {
+  async  function modiFyKycApicall(param) {
     try {
       const request = {
         name: param.userLogPanNm,
@@ -317,7 +317,7 @@ export default function decorate(block) {
       // console.log(error);
     }
   }
-  async function apiPasscode(params) {
+  async  function apiPasscode(params) {
     try {
       const reqAuth = {
         password: params.optNo,
@@ -360,7 +360,7 @@ export default function decorate(block) {
     }
   }
 
-  async function apiAuth(params) {
+  async  function apiAuth(params) {
     try {
       const reqAuth = {
         password: params.optNo,
@@ -461,7 +461,7 @@ export default function decorate(block) {
       // console.log(error);
     }
   }
-  async function otpCall(param) {
+  async  function otpCall(param) {
     try {
       const request = {
         userId: param,
@@ -501,7 +501,7 @@ export default function decorate(block) {
       // console.log(error);
     }
   }
-  async function kycCall(param) {
+  async  function kycCall(param) {
     try {
       const request = {
         panNo: param,
@@ -730,7 +730,7 @@ export default function decorate(block) {
       // console.log(error);
     }
   }
-  async function apiCall(userPanNumber) {
+  async  function apiCall(userPanNumber) {
     try {
       dataMapMoObj.panDlts.isIndividualPan = userPanNumber;
       dataMapMoObj.panDlts.pannumber = userPanNumber;

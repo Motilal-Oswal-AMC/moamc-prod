@@ -10,7 +10,7 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
-function attachEventListners(main) {
+ function attachEventListners(main) {
   [
     'aue:content-patch',
     'aue:content-update',
@@ -26,7 +26,7 @@ function attachEventListners(main) {
   }));
 }
 
-async function applyChanges(event) {
+async  function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
 

@@ -2,7 +2,7 @@ import dataMapMoObj from '../../scripts/constant.js';
 import dataCfObj from '../../scripts/dataCfObj.js';
 import { img } from '../../scripts/dom-helpers.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   const riskmet = block.closest('.risk-o-meter-container');
   Array.from(block.children).forEach((row, rowIndex) => {
     row.classList.add('risk-meter-cont', `corner-${rowIndex + 1}`);

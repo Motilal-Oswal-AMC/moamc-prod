@@ -14,7 +14,7 @@ import dataMapMoObj from '../../scripts/constant.js';
 import fundcardblock from '../fund-card/fund-card.js';
 import listviewblock from '../list-view-card/list-view-card.js';
 
-function dataFilterfun(param) {
+ function dataFilterfun(param) {
   const dataMapObj = {
     schemeName: [],
     fundCategory: [{
@@ -252,14 +252,14 @@ function dataFilterfun(param) {
   return dataMapObj;
 }
 
-function capitalizeEachWord(sentence) {
+ function capitalizeEachWord(sentence) {
   if (sentence.includes('etf')) {
     return `${sentence.toUpperCase()}'s`;
   }
   return sentence.replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-function viewFunction(param) {
+ function viewFunction(param) {
   param.querySelector('.list-container').innerHTML = '';
   param.querySelector('.cards-container').innerHTML = '';
   if (Array.from(param.querySelector('.listby-container').classList).includes('list-view-active')) {
@@ -287,7 +287,7 @@ function viewFunction(param) {
   // dataMapMoObj.parseFunction(param, 'viewfunc');
 }
 
-function searchFunctionality(block) {
+ function searchFunctionality(block) {
   // 1. Cache all necessary DOM element references
   const data = [];
   if (Array.from(block.querySelector('.cards-container').children).length !== 0) {
@@ -359,7 +359,7 @@ function searchFunctionality(block) {
 
   const escapeRegExp = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-  // The filter function remains the same
+  // The filter  function remains the same
   const filterListItems = (searchTerm) => {
     const term = searchTerm.trim();
     const existingNoResultsMessage = listContainer.querySelector('.no-results-message');
@@ -421,7 +421,7 @@ function searchFunctionality(block) {
 
   let currentFocusIndex = -1;
 
-  function updateActiveItem(items) {
+   function updateActiveItem(items) {
     items.forEach((item, idx) => {
       if (idx === currentFocusIndex) {
         item.classList.add('active-search-item');
@@ -620,7 +620,7 @@ function searchFunctionality(block) {
   return false;
 }
 
-function checkfilter(block) {
+ function checkfilter(block) {
   const searInp = block.querySelector('.search-input input');
   searInp.value = '';
   const cancelBtn = block.querySelector('.cancel-search');
@@ -684,7 +684,7 @@ function checkfilter(block) {
 
   viewFunction(block);
 
-  function filterGroup(Filterparam) {
+   function filterGroup(Filterparam) {
     const appliedList = block.querySelector('.applied-filter-list');
     appliedList.innerHTML = '';
 
@@ -774,7 +774,7 @@ function checkfilter(block) {
   return filterGroup(filterTag);
 }
 
-function applyFunction(block) {
+ function applyFunction(block) {
   let temp = dataMapMoObj.tempMobReturn === undefined ? [] : dataMapMoObj.tempMobReturn;
   temp = dataMapMoObj.tempMobReturn.length !== 0 ? temp : dataCfObj.cfDataObjs.slice(0, 11);
   dataMapMoObj.tempMobReturn = temp;
@@ -808,12 +808,12 @@ function applyFunction(block) {
   }
 }
 
-dataMapMoObj.parseFunction = (param, attrparam) => {
+dataMapMoObj.parse function = (param, attrparam) => {
   if (attrparam === 'viewfunc') {
     searchFunctionality(param);
   }
 };
-export default function decorate(block) {
+export default  function decorate(block) {
   const ultooltip = block.closest('.section');
   const ullisttoop = ultooltip.querySelector('.default-content-wrapper ul');
   // console.log(ullisttoop);

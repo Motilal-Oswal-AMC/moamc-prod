@@ -3,7 +3,7 @@ import dataMapMoObj from '../../scripts/constant.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 // import formBlock from '../form/form.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   /* change to ul, li */
   const ulblk = document.createElement('ul');
   [...block.children].forEach((row) => {
@@ -24,7 +24,7 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(ulblk);
 
-  // function setupAuthorListToggle() {
+  //  function setupAuthorListToggle() {
   //   const sections = document.querySelectorAll('.behind-the-content.our-author-list');
   //   sections.forEach((section) => {
   //     const cardsBlock = section.querySelector('.cards.block');
@@ -267,7 +267,7 @@ export default function decorate(block) {
   }
 }
 
-function decorateArticlePage() {
+ function decorateArticlePage() {
   const articleDetailsElement = document.querySelector('.moedge-article-details');
   let mainElement;
   if (articleDetailsElement) {

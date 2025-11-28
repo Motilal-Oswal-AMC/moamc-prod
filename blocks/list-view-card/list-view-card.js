@@ -13,7 +13,7 @@ import {
   wishlist,
 } from '../../scripts/scripts.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   let planFlow = 'Direct';
   if (document.querySelector('.fund-toggle-wrap [type="checkbox"]')) {
     planFlow = document.querySelector('.fund-toggle-wrap [type="checkbox"]')

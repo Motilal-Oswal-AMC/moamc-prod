@@ -1,7 +1,7 @@
 import Swiper from '../swiper/swiper-bundle.min.js';
 import { div, p } from '../../scripts/dom-helpers.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   block.classList.add('swiper');
   const swiperWrapper = div({ class: 'swiper-wrapper' });
 

@@ -28,7 +28,7 @@ const delay = (ms) => new Promise((resolve) => {
   setTimeout(resolve, ms);
 });
 
-async function removeClassAfterDelay() {
+async  function removeClassAfterDelay() {
   const closestParam = document.querySelector('main');
   await delay(1200);
   // closestParam.querySelector('.modal-content').remove();
@@ -38,7 +38,7 @@ async function removeClassAfterDelay() {
   closestParam.querySelector('.modal').remove();
 }
 
-function hideFormsClick(btn) {
+ function hideFormsClick(btn) {
   // const card2 = closestParam.querySelector('.our-popular-funds')
   //   || closestParam.querySelector('.known-our-funds')
   //   || closestParam.querySelector('.fdp-card-container');
@@ -69,7 +69,7 @@ function hideFormsClick(btn) {
       classAdd.classList.remove('hide-modal');
     }
     classAdd.classList.add('hide-modal');
-    // async function removeClassAfterDelay() {
+    // async  function removeClassAfterDelay() {
     //   await delay(1200);
     //   closestParam.querySelector('.modal').remove();
     // }
@@ -145,7 +145,7 @@ function hideFormsClick(btn) {
   });
 }
 
-export async function existingUser(paramblock) {
+export async  function existingUser(paramblock) {
   const closestParam = paramblock.closest('main');
   const kycForm = closestParam.querySelector('.fdp-kyc-form');
   const panForm = closestParam.querySelector('.pan-details-modal');
@@ -194,20 +194,20 @@ export async function existingUser(paramblock) {
     existingBox: true,
   };
 
-  // function setCookie(cname, cvalue, exdays) {
+  //  function setCookie(cname, cvalue, exdays) {
   //   const d = new Date();
   //   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   //   const expires = `expires=${d.toUTCString()}`;
   //   document.cookie = `${cname}=${cvalue};${expires};path=/`;
   // }
 
-  // function removeCookie(cname) {
+  //  function removeCookie(cname) {
   //   document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
   // }
   // removeCookie('')
 
   // eslint-disable-next-line consistent-return
-  async function setmpinforgets(params) {
+  async  function setmpinforgets(params) {
     try {
       const reqminfor = {
         userId: dataMapMoObj.panDlts.pannumber,
@@ -277,7 +277,7 @@ export async function existingUser(paramblock) {
     }
   }
 
-  async function apiPasscode(params) {
+  async  function apiPasscode(params) {
     try {
       const reqAuth = {
         password: params.optNo,
@@ -341,7 +341,7 @@ export async function existingUser(paramblock) {
     myInput.setSelectionRange(len, len);
   };
 
-  function passCodeValidation(passpoint) {
+   function passCodeValidation(passpoint) {
     passpoint.forEach((inputelfac, index) => {
       inputelfac.setAttribute('maxLength', 1);
       inputelfac.addEventListener('click', () => {
@@ -456,7 +456,7 @@ export async function existingUser(paramblock) {
     });
   }
 
-  async function apiAuth(params) {
+  async  function apiAuth(params) {
     try {
       const reqAuth = {
         password: params.optNo,
@@ -588,7 +588,7 @@ export async function existingUser(paramblock) {
     }
   }
 
-  function forgetpasscode(resetscreen) {
+   function forgetpasscode(resetscreen) {
     const texture = resetscreen
       .querySelector('.resetpasscode2 .innerpasscode3');
     texture.textContent = '';
@@ -669,7 +669,7 @@ export async function existingUser(paramblock) {
   }
   dataMapMoObj.passcode = forgetpasscode;
 
-  async function panDetails(params) {
+  async  function panDetails(params) {
     try {
       const request = {
         name: params.userLogPanNm,
@@ -703,7 +703,7 @@ export async function existingUser(paramblock) {
     }
   }
 
-  async function lmsentCall(paramData) {
+  async  function lmsentCall(paramData) {
     try {
       const request = {
         frmdata: `LMS~${paramData.userLogPan}|${paramData.userLogPanNm}|+91${paramData.userLogMoNm}|${paramData.userLogEm}||Mumbai||${paramData.kycflag}|MF New investor|||||||||${paramData.isnri}|`,
@@ -716,7 +716,7 @@ export async function existingUser(paramblock) {
     }
   }
 
-  async function modiFyKycApicall(param) {
+  async  function modiFyKycApicall(param) {
     try {
       const request = {
         name: param.userLogPanNm,
@@ -738,7 +738,7 @@ export async function existingUser(paramblock) {
     }
   }
 
-  async function getCkycData(paramDtArg) {
+  async  function getCkycData(paramDtArg) {
     try {
       const reqGetckyc = {
         panNo: paramDtArg,
@@ -778,7 +778,7 @@ export async function existingUser(paramblock) {
     }
   }
   dataMapMoObj.otpcount = 0;
-  async function myDelayedLogic() {
+  async  function myDelayedLogic() {
     await delay(30000);
     if (dataMapMoObj.otpcount < 4) {
       closestParam.querySelector('.otp-fdp .resend-btn').style.display = 'block';
@@ -793,7 +793,7 @@ export async function existingUser(paramblock) {
       });
   }
 
-  async function otpCall(param) {
+  async  function otpCall(param) {
     try {
       const request = {
         userId: param,
@@ -879,7 +879,7 @@ export async function existingUser(paramblock) {
     }
   }
   dataMapMoObj.otpCallpan = otpCall;
-  async function kycCall(param) {
+  async  function kycCall(param) {
     try {
       const request = {
         panNo: param,
@@ -1147,7 +1147,7 @@ export async function existingUser(paramblock) {
     }
   }
 
-  function otpValidation(inputs) {
+   function otpValidation(inputs) {
     inputs.forEach((inputel, index) => {
       inputel.setAttribute('maxLength', 1);
 
@@ -1289,7 +1289,7 @@ export async function existingUser(paramblock) {
   // api call for otp
   // 'AEEPW9969G',
 
-  async function apiCall(userPanNumber) {
+  async  function apiCall(userPanNumber) {
     try {
       dataMapMoObj.panDlts.isIndividualPan = userPanNumber;
       dataMapMoObj.panDlts.pannumber = userPanNumber;
@@ -1487,7 +1487,7 @@ export async function existingUser(paramblock) {
       inputLable.querySelector('.innerpandts1').classList.remove('active');
     }
   });
-  // this function for hide modal forms
+  // this  function for hide modal forms
 
   const mod = closestParam.querySelector('.pan-details-modal .icon-modal-cross-btn');
   const mod2 = closestParam
@@ -1505,15 +1505,15 @@ export async function existingUser(paramblock) {
   hideFormsClick(mod6);
 }
 
-function loadCSS(href) {
+ function loadCSS(href) {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = href;
   document.head.appendChild(link);
 }
 
-// Helper function to create a custom dropdown
-function createCustomDropdown(id, labelText, options, defaultValue) {
+// Helper  function to create a custom dropdown
+ function createCustomDropdown(id, labelText, options, defaultValue) {
   return div(
     {
       class: 'custom-select-wrapper',
@@ -1539,7 +1539,7 @@ function createCustomDropdown(id, labelText, options, defaultValue) {
   );
 }
 
-export default function decorate(block) {
+export default  function decorate(block) {
   const mainclass = block.closest('main');
   const modeltwo = mainclass.querySelector('.modal-stepup-two');
   const modalstepOne = mainclass.querySelector('.modal-stepup-one');
@@ -2109,7 +2109,7 @@ export default function decorate(block) {
   block.innerHTML = '';
 
   // Close Button
-  function getTodaysDateFormatted() {
+   function getTodaysDateFormatted() {
     const today = new Date();
     const day = today.getDate();
     const month = today.toLocaleString('default', {
@@ -2500,8 +2500,8 @@ export default function decorate(block) {
     });
   });
 
-  // --- 2. ADD this new helper function ---
-  function syncSuggestionButtonsState() {
+  // --- 2. ADD this new helper  function ---
+   function syncSuggestionButtonsState() {
     const currentValue = amountInput.value;
     // eslint-disable-next-line no-unused-vars
     let hasActiveMatch = false;
@@ -2516,7 +2516,7 @@ export default function decorate(block) {
     });
   }
 
-  function numberToWords(num) {
+   function numberToWords(num) {
     let numarg = num;
     if (numarg === 0) return 'zero';
 
@@ -2525,7 +2525,7 @@ export default function decorate(block) {
     const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
     const scales = ['', 'thousand', 'million', 'billion', 'trillion'];
 
-    function convertLessThanThousand(n) {
+     function convertLessThanThousand(n) {
       let arg = n;
       let word = '';
       if (arg >= 100) {
@@ -2569,7 +2569,7 @@ export default function decorate(block) {
     return words.trim();
   }
 
-  function numberToRupees(num) {
+   function numberToRupees(num) {
     // Get the integer part (Rupees)
     const rupees = Math.floor(num);
 
@@ -2596,7 +2596,7 @@ export default function decorate(block) {
     return finalString;
   }
 
-  // --- 3. MODIFY the `handleAmountInput` function to call the new sync function ---
+  // --- 3. MODIFY the `handleAmountInput`  function to call the new sync  function ---
   const handleAmountInput = (e) => {
     const inputVal = e.target;
     const movb = /[^0-9]/g;
@@ -2670,7 +2670,7 @@ export default function decorate(block) {
   const finsel = selDate.querySelector('[data-value="Select Date"]');
   const dateSel = block.querySelector('#custom-select-endDate .select-selected');
 
-  function flakterDate(datelement, displayDate) {
+   function flakterDate(datelement, displayDate) {
     // ADDED: A variable to store the user-selected date
     let originalSipDate = '';
     const fpInstance = window.flatpickr(datelement, {
@@ -2715,7 +2715,7 @@ export default function decorate(block) {
     // ADDED: Logic for the 'Start Today' checkbox
     const startTodayCheckbox = block.querySelector('.start-today-checkbox');
 
-    // Helper function to get today's date in the correct format
+    // Helper  function to get today's date in the correct format
 
     // Initialize the originalSipDate with the value set by flatpickr on load
     originalSipDate = sipDateDisplay.textContent;
@@ -2731,7 +2731,7 @@ export default function decorate(block) {
     });
   }
 
-  function flakterDateV2(datelement, displayDate, dropdownVal) {
+   function flakterDateV2(datelement, displayDate, dropdownVal) {
     let disableRule = [];
     const defaultDate = new Date(); // Initialize with today
 
@@ -2938,7 +2938,7 @@ export default function decorate(block) {
   }
   // const stepSipIcon = blkcompo.querySelector('.stepupsub2 img');
   // const modalstepOne = mainclass.querySelector('.modal-stepup-one')
-  // stepSipIcon.addEventListener('click', function () {
+  // stepSipIcon.addEventListener('click',  function () {
   //   modalstepOne.style.display = 'block';
   // });
   if (stepblk !== null) {

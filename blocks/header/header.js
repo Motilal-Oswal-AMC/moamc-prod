@@ -12,13 +12,13 @@ export const isDesktop = window.matchMedia('(min-width: 900px)');
  * @param {Element} sections The container element
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
-function toggleAllNavSections(sections, expanded = false) {
+ function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
 
-function closeOnEscape(e) {
+ function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
     const navSections = nav.querySelector('.nav-sections');
@@ -35,7 +35,7 @@ function closeOnEscape(e) {
   }
 }
 
-function closeOnFocusLost(e) {
+ function closeOnFocusLost(e) {
   const nav = e.currentTarget;
   if (!nav.contains(e.relatedTarget)) {
     // const navSections = nav.querySelector('.nav-sections');
@@ -50,7 +50,7 @@ function closeOnFocusLost(e) {
   }
 }
 
-function openOnKeydown(e) {
+ function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav-drop';
   if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
@@ -61,7 +61,7 @@ function openOnKeydown(e) {
   }
 }
 
-function focusNavSection() {
+ function focusNavSection() {
   document.activeElement.addEventListener('keydown', openOnKeydown);
 }
 
@@ -71,7 +71,7 @@ function focusNavSection() {
  * @param {Element} navSections The nav sections within the container element
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
-function toggleMenu(nav, navSections, forceExpanded = null) {
+ function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
@@ -110,7 +110,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
-export default async function decorate(block) {
+export default async  function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
@@ -548,7 +548,7 @@ export default async function decorate(block) {
     ];
     dataMapMoObj.addIndexed(nfoBanner);
   }
-  (function initializeNfoBanner() {
+  ( function initializeNfoBanner() {
     try {
       const setupUI = () => {
         const liveIndicatorContainer = nfoBanner.querySelector('.nfo-banner-sub1 .nfo-banner-list1');
@@ -634,7 +634,7 @@ export default async function decorate(block) {
   block.append(navWrapper);
 
   const delay = (ms) => new Promise((resolve) => { setTimeout(resolve, ms); });
-  async function removeClassAfterDelay() {
+  async  function removeClassAfterDelay() {
     await delay(800);
     navSections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach(() => {
       // section.querySelectorAll('ul').forEach((elul) => {

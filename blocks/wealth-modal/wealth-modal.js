@@ -5,7 +5,7 @@ import {
 import { myAPI, generateAppId } from '../../scripts/scripts.js';
 import { createModal } from '../modal/modal.js';
 
-async function popup(param) {
+async  function popup(param) {
   // Create NEW container for the modal
   const videoContainer = document.createElement('div');
   videoContainer.append(param);
@@ -13,7 +13,7 @@ async function popup(param) {
   const { showModal } = await createModal([videoContainer]);
   showModal();
 }
-export default function decorate(block) {
+export default  function decorate(block) {
   const delay = (ms) => new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
@@ -115,7 +115,7 @@ export default function decorate(block) {
   const arrow = assocDiv.querySelector('.dropdown-arrow');
   const formDropdownList = assocDiv.querySelectorAll('.assoc-drop li');
 
-  function toggleDropdown(e) {
+   function toggleDropdown(e) {
     e.stopPropagation();
     assocDiv.classList.toggle('active');
     assocDrop.classList.toggle('open');
@@ -182,12 +182,12 @@ export default function decorate(block) {
   const fields = [nameInput, emailInput, phoneInput, assocInput];
   const touchedFields = new Set();
 
-  function validateForm() {
+   function validateForm() {
     // Ensure all fields are validated, including the associated dropdown
     return fields.every((f) => dataMapMoObj.validateField(f));
   }
 
-  function toggleSubmitButton() {
+   function toggleSubmitButton() {
     // FIX: removed hasAttribute('readonly') logic that was incorrectly marking assocInput as filled
     const allFilled = fields.every((f) => f.value.trim() !== '');
     const allValid = fields
@@ -198,7 +198,7 @@ export default function decorate(block) {
   }
   dataMapMoObj.toggleSubmitButton = toggleSubmitButton;
 
-  function toggleErrorIcon(inputarg, isValid) {
+   function toggleErrorIcon(inputarg, isValid) {
     const icon = inputarg.parentElement.querySelector('.error-icon');
     if (!icon) return;
     if (!isValid && inputarg.value.trim() !== '') icon.style.display = 'inline';
@@ -220,7 +220,7 @@ export default function decorate(block) {
 
     }
   });
-  async function validateField(inputarg) {
+  async  function validateField(inputarg) {
     const nameError = wealthModal.querySelector('.name-error');
     const emailError = wealthModal.querySelector('.email-error');
     const phoneError = wealthModal.querySelector('.num-error');

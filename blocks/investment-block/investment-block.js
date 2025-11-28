@@ -1,7 +1,7 @@
 import dataCfObj from '../../scripts/dataCfObj.js';
 import fundcardblock from '../fund-card/fund-card.js';
 
-export default function decorate(block) {
+export default  function decorate(block) {
   block.style.display = 'none'; // RM11
   Array.from(block.children).forEach((element) => {
     element.classList.add('compound-item');
