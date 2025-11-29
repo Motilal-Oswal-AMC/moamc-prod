@@ -318,7 +318,7 @@ export default function decorate(block) {
           email: emailInput.value.trim(),
           state: 'MH',
           city: 'M',
-          customField01: 'NULL',
+          customField01: 'WCS-2025',
           customField02: 'NULL',
           customField03: 'NULL',
           userIp: '156.67.260.62',
