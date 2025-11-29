@@ -306,6 +306,29 @@ export default function decorate(block) {
   moclosse.querySelector('.thank-you-scr-sec4').addEventListener('click', () => {
     moclosse.style.display = 'none';
   });
+  async function getPublicIpId() {
+    try {
+    // API service that returns the public IP address
+      const response = await fetch('https://api.ipify.org?format=json');
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // data.ip will contain your public IPv4 address
+      return data.ip;
+    } catch (error) {
+      console.error('Failed to retrieve Public IP:', error);
+      return 'Error: Could not get IP.';
+    }
+  }
+
+  getPublicIpId().then((publicIP) => {
+    console.log('Your Public IP/Network ID:', publicIP);
+    dataMapMoObj.ipId = publicIP;
+  });
   submitButton.addEventListener('click', async (e) => {
     e.preventDefault();
     fields.forEach((f) => touchedFields.add(f));
@@ -316,14 +339,14 @@ export default function decorate(block) {
           name: nameInput.value.trim(),
           mobile: phoneInput.value.trim(),
           email: emailInput.value.trim(),
-          state: 'MH',
-          city: 'M',
+          state: '',
+          city: '',
           customField01: 'WCS-2025',
-          customField02: 'NULL',
-          customField03: 'NULL',
-          userIp: '156.67.260.62',
-          type: 'other',
-          code: 'NA',
+          customField02: wealthModal.querySelector('.associated-inp').value,//'NULL',
+          customField03: '',
+          userIp: dataMapMoObj.ipId, //'156.67.260.62',
+          type: '',//'other',
+          code: '',//'NA',
         };
         const headers = {
           'Content-Type': 'application/json',
@@ -348,7 +371,7 @@ export default function decorate(block) {
             objreq,
             headers,
           );
-        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/') || window.location.href.includes('https://beta.motilaloswalwcs.com/')) {
+        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/')) {
           response = await myAPI(
             'POST',
             'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
@@ -377,7 +400,6 @@ export default function decorate(block) {
           dataMapMoObj.texterr.style.display = 'block';
           dataMapMoObj.texterr.textContent = '';
           dataMapMoObj.texterr.textContent = 'Someone from our team will contact you with further details';
-          // `Reports will be shared via email at ${dataMapMoObj.autoMaskEmail(emailInput.value)}`;
           // Reset form
           fields.forEach((f) => {
             f.value = '';
