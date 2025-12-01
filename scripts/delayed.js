@@ -116,6 +116,27 @@ decorateBreadcrumbs();
 
 const newSection = document.querySelector('.moedge-article-main .article-sub-left.articlesub1 .leftartsub1');
 
+(function injectMinimalGTM() {
+  // --- Add external GTM script to HEAD ---
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NBBJHXVS';
+  document.head.appendChild(script);
+
+  // --- Add GTM noscript iframe to HEAD ---
+  const noscript = document.createElement('noscript');
+  const iframe = document.createElement('iframe');
+
+  iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS';
+  iframe.height = '0';
+  iframe.width = '0';
+  iframe.style.cssText = 'display:none;visibility:hidden';
+
+  noscript.appendChild(iframe);
+  document.head.insertBefore(noscript, document.head.firstChild);
+})();
+
+
 (function injectGTMNoScript() {
   const noscript = document.createElement('noscript');
   const iframe = document.createElement('iframe');
@@ -160,44 +181,4 @@ if (window.innerWidth <= 767) {
   }
   //
 }
-
-//  function articleStructure() {
-//    // Investor Education article left and right wrapper
-//   if (window.location.href.includes('/investor-education/all-articles/')
-// || window.location.href.includes('/motilal-oswal-edge/article-details')) {
-//     const maincloser = document.querySelector('main');
-//     const rightSub = maincloser.querySelectorAll('.article-sub-right');
-//     const rightarticle = maincloser.querySelector('.article-right-wrapper');
-//     Array.from(rightSub).forEach((rightel) => {
-//       rightarticle.append(rightel);
-//     });
-//     const leftSub = maincloser.querySelectorAll('.article-sub-left');
-//     const leftarticle = maincloser.querySelector('.article-left-wrapper');
-//     Array.from(leftSub).forEach((leftel) => {
-//       leftarticle.append(leftel);
-//     });
-//     if (maincloser.querySelector('.moedge-article-details')) {
-//       dataMapMoObj.CLASS_PREFIXES = ['articlemain', 'articlesub', 'articleitem',
-//         'subarticle', 'mainarticle', 'itemarticle', 'itemsubart',
-//         'mainitemart', 'itemmainart', 'submainart'];
-//       dataMapMoObj.addIndexed(
-//         maincloser.querySelector('.moedge-article-details'),
-//       );
-
-//       const mainleft = maincloser.querySelector('.article-left-wrapper');
-//       dataMapMoObj.CLASS_PREFIXES = ['leftartmain', 'leftartsub', 'leftartitem',
-//         'subleftart', 'mainleftart', 'itemleftart', 'itemleftart',
-//         'mainitemleftart', 'itemmainleftart', 'submainleftart'];
-//       dataMapMoObj.addIndexed(
-//         mainleft,
-//       );
-//     }
-//     const formpath = maincloser.querySelector('.article-right-wrapper .subscribe-email');
-//     const formdiv = formpath
-//       .querySelector('.subscribe-email .button-container');
-//     formBlock(formdiv);
-//   }
-// }
-// articleStructure();
-
 
