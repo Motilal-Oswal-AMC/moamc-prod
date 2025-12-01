@@ -777,10 +777,6 @@ export default async function decorate(block) {
 
   const glossary = block.closest('.glossary-tabs');
   if (glossary) {
-    // const paragraphs = heroBlock.querySelectorAll('p');
-    // dataMapMoObj.CLASS_PREFIXES = ['tab1', 'tab2',
-    // 'tab3', 'tab4', 'tab5', 'tab6', 'tab7',
-    // 'tab8', 'tab9'];
     dataMapMoObj.CLASS_PREFIXES = ['tabmain', 'tab-inner', 'tab-subinner', 'tab-child', 'tab-subchild', 'tab-itemmain', 'tab-subitem', 'tab-itemchild', 'tab-iteminner'];
     dataMapMoObj.addIndexed(block);
 

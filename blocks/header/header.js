@@ -2,10 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import dataMapMoObj from '../../scripts/constant.js';
 import dataCfObj from '../../scripts/dataCfObj.js';
-// import { loadAutoBlock } from '../../scripts/scripts.js';
-// import {a,button,div,h3,li,ul} from '../../scripts/dom-helpers.js';
-// yogesh bhai OG
-// media query match that indicates mobile/tablet width
+
 export const isDesktop = window.matchMedia('(min-width: 900px)');
 /**
  * Toggles all nav sections
@@ -382,18 +379,6 @@ export default async function decorate(block) {
             elfor.style.display = 'none';
           });
         });
-        // navSections.querySelectorAll('ul > li').forEach((elfor) => {
-        //   if (elfor.querySelector('ul') !== null) {
-        //     elfor.querySelector('ul').style.display = 'none';
-        //   }
-        // });
-        // if (index === 1) {
-        //   navSection.querySelectorAll('ul').forEach((elfor) => {
-        //     if (elfor.querySelector('ul') !== null) {
-        //       elfor.querySelector('ul').style.display = 'block';
-        //     }
-        //   });
-        // }
         navSection.addEventListener('click', () => {
           navSections.querySelectorAll('ul > li').forEach((elfor) => {
             if (elfor.querySelector('ul') !== null) {
@@ -573,7 +558,6 @@ export default async function decorate(block) {
         if (!element) {
           return;
         }
-
         const COUNTDOWN_DAYS = 2;
         const COUNTDOWN_HOURS = 20;
         const COUNTDOWN_MINUTES = 20;
@@ -637,14 +621,6 @@ export default async function decorate(block) {
   async function removeClassAfterDelay() {
     await delay(800);
     navSections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach(() => {
-      // section.querySelectorAll('ul').forEach((elul) => {
-      //   elul.style.display = 'none';
-      // });
-      // const navshort = navSections.querySelector('ul').children[1];
-      // const navsort = navshort.querySelector('.default-content-wrapper').firstElementChild;
-      // navsort.querySelector('.li:nth-child(2)').style.display = 'flex';
-      // navsort.querySelector('.sub-popup-list6 .sub-popup-list-content2').style.display = 'flex';
-
       const navinner = navSections.querySelector('.nav-sec-list1 .sub-popup-sub3 .sub-popup-inner-text2');
       navinner.querySelectorAll('ul').forEach((navel) => { navel.style.display = 'block'; });
 
@@ -657,39 +633,6 @@ export default async function decorate(block) {
   }
   if (window.innerWidth < 900) {
     removeClassAfterDelay();
-    // const navContainer = document.querySelectorAll('.nav-drop');
-    // navContainer.addEventListener('click')
-    // navContainer.addEventListener('click', (event) => {
-    //   event.stopPropagation();
-    //   const clickedListItem = event.target.closest('li.comlist');
-    //   if (!clickedListItem) {
-    //     return;
-    //   }
-    //   const submenu = clickedListItem.querySelector(':scope > ul');
-    //   if (!submenu) {
-    //     return;
-    //   }
-    //   if (submenu.style.display === 'block') {
-    //     submenu.style.display = 'none';
-    //     submenu.closest('li').setAttribute('aria-expanded', 'false');
-    //   } else {
-    //     submenu.style.display = 'block';
-    //     if (submenu.querySelector('.default-content-wrapper') !== null) {
-    //       const subfilt = Array.from(submenu.querySelector('.default-content-wrapper').children);
-    //       subfilt.forEach((elulsub) => {
-    //         elulsub.style.display = 'block';
-    //       });
-    //     }
-    //     submenu.closest('li').setAttribute('aria-expanded', 'true');
-    //     if (submenu.closest('.nav-sec-sub2')) {
-    //       const mosub = submenu.querySelector('.sub-popup-sec1 .sub-popup-sub3');
-    //       if (mosub) {
-    //         mosub.querySelector('.sub-popup-list5 ul').style.display = 'block';
-    //         mosub.querySelector('.sub-popup-list6 ul').style.display = 'block';
-    //       }
-    //     }
-    //   }
-    // });
   }
 
   const searchtemp = block.querySelector('.nav-tools .nav-tools-sec1 .nav-tools-inner-net1');
@@ -759,20 +702,4 @@ export default async function decorate(block) {
       // console.error('Error in scroll event handler:', error);
     }
   });
-
-  // if (window.location.href.includes('/mutual-fund/in/en/pms')
-  // || window.location.href.includes('/mutual-fund/in/en/aif')) {
-
-  //     try {
-  //       const navSecSub1 = document.querySelector('.comlist.nav-sec-sub1');
-  //       console.log("navSecSub1",navSecSub1)
-  //       if (navSecSub1) {
-  //         navSecSub1.remove();
-  //         console.log('Removed .nav-sec-sub1 element successfully');
-  //       }
-  //     } catch (error) {
-  //       console.error('Error removing element:', error);
-  //     }
-
-  //   }
 }
