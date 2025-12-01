@@ -369,7 +369,8 @@ export default function decorate(block) {
           'Content-Type': 'application/json',
           'X-Encrypted': 'N',
           appid: generateAppId(),
-          'X-Lead-Encrypted': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+          'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg=='
+          // 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
         };
 
         let response;
