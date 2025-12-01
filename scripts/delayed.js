@@ -116,6 +116,27 @@ decorateBreadcrumbs();
 
 const newSection = document.querySelector('.moedge-article-main .article-sub-left.articlesub1 .leftartsub1');
 
+(function injectMinimalGTM() {
+  // --- Add external GTM script to HEAD ---
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NBBJHXVS';
+  document.head.appendChild(script);
+
+  // --- Add GTM noscript iframe to HEAD ---
+  const noscript = document.createElement('noscript');
+  const iframe = document.createElement('iframe');
+
+  iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS';
+  iframe.height = '0';
+  iframe.width = '0';
+  iframe.style.cssText = 'display:none;visibility:hidden';
+
+  noscript.appendChild(iframe);
+  document.head.insertBefore(noscript, document.head.firstChild);
+})();
+
+
 (function injectGTMNoScript() {
   const noscript = document.createElement('noscript');
   const iframe = document.createElement('iframe');
