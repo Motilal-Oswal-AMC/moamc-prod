@@ -315,13 +315,23 @@ export default function decorate(block) {
   block.closest('main').querySelectorAll('.thank-you-screen p')[2].style.display = 'none';
   const moclosse = block.closest('main').querySelector('.thank-you-screen');
   if (moclosse.querySelector('.thank-you-scr-sec5 img') !== null) {
-    moclosse.querySelector('.thank-you-scr-sec5 img').addEventListener('click', () => {
-      moclosse.style.display = 'none';
+    moclosse.querySelector('.thank-you-scr-sec5 img').addEventListener('click', (event) => {
+      moclosse.style.display = 'none';//aj27
+      const target = event.target.closest('.thank-you-scr-cont1');
+      if (target.textContent.includes('Thank You')) {
+        closeIcon.click();
+      }
     });
   }
   moclosse.querySelector('.thank-you-scr-sec4 a').removeAttribute('href');
-  moclosse.querySelector('.thank-you-scr-sec4').addEventListener('click', () => {
+  moclosse.querySelector('.thank-you-scr-sec4').addEventListener('click', (event) => {
     moclosse.style.display = 'none';
+    if (event.target.closest('.thank-you-scr-cont1')) {
+      const target = event.target.closest('.thank-you-scr-cont1');
+      if (target.textContent.includes('Thank You')) {
+        closeIcon.click();
+      }
+    }
   });
   async function getPublicIpId() {
     try {
