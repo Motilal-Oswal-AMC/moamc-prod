@@ -365,7 +365,7 @@ export default function decorate(block) {
           type: '', // 'other',
           code: '', // 'NA',
         };
-        const headers = {
+        let headers = {
           'Content-Type': 'application/json',
           'X-Encrypted': 'N',
           appid: generateAppId(),
@@ -374,13 +374,26 @@ export default function decorate(block) {
 
         let response;
         if (window.location.href.includes('https://stage.motilaloswalwcs.com/')) {
+          headers = {
+            'Content-Type': 'application/json',
+            'X-Encrypted': 'N',
+            appid: generateAppId(),
+            'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg==',
+          };
           response = await myAPI(
             'POST',
-            'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
+            'https://mf.moamc.com/ums/api/SaveLead/create-leads',
+            // 'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
             objreq,
             headers,
           );
         } else if (window.location.href.includes('motilal-oswal-amc.aem.live')) {
+          headers = {
+            'Content-Type': 'application/json',
+            'X-Encrypted': 'N',
+            appid: generateAppId(),
+            'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg==',
+          };
           response = await myAPI(
             'POST',
             // 'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
@@ -388,7 +401,7 @@ export default function decorate(block) {
             objreq,
             headers,
           );
-        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/')) {
+        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/') || window.location.href.includes('https://beta.motilaloswalwcs.com/')) {
           response = await myAPI(
             'POST',
             'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
@@ -396,6 +409,12 @@ export default function decorate(block) {
             headers,
           );
         } else {
+          headers = {
+            'Content-Type': 'application/json',
+            'X-Encrypted': 'N',
+            appid: generateAppId(),
+            'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg==',
+          };
           response = await myAPI(
             'POST',
             'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
