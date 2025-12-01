@@ -315,13 +315,23 @@ export default function decorate(block) {
   block.closest('main').querySelectorAll('.thank-you-screen p')[2].style.display = 'none';
   const moclosse = block.closest('main').querySelector('.thank-you-screen');
   if (moclosse.querySelector('.thank-you-scr-sec5 img') !== null) {
-    moclosse.querySelector('.thank-you-scr-sec5 img').addEventListener('click', () => {
-      moclosse.style.display = 'none';
+    moclosse.querySelector('.thank-you-scr-sec5 img').addEventListener('click', (event) => {
+      moclosse.style.display = 'none';//aj27
+      const target = event.target.closest('.thank-you-scr-cont1');
+      if (target.textContent.includes('Thank You')) {
+        closeIcon.click();
+      }
     });
   }
   moclosse.querySelector('.thank-you-scr-sec4 a').removeAttribute('href');
-  moclosse.querySelector('.thank-you-scr-sec4').addEventListener('click', () => {
+  moclosse.querySelector('.thank-you-scr-sec4').addEventListener('click', (event) => {
     moclosse.style.display = 'none';
+    if (event.target.closest('.thank-you-scr-cont1')) {
+      const target = event.target.closest('.thank-you-scr-cont1');
+      if (target.textContent.includes('Thank You')) {
+        closeIcon.click();
+      }
+    }
   });
   async function getPublicIpId() {
     try {
@@ -365,22 +375,36 @@ export default function decorate(block) {
           type: '', // 'other',
           code: '', // 'NA',
         };
-        const headers = {
+        let headers = {
           'Content-Type': 'application/json',
           'X-Encrypted': 'N',
           appid: generateAppId(),
-          'X-Lead-Encrypted': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+          'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg=='
+          // 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
         };
 
         let response;
         if (window.location.href.includes('https://stage.motilaloswalwcs.com/')) {
+          headers = {
+            'Content-Type': 'application/json',
+            'X-Encrypted': 'N',
+            appid: generateAppId(),
+            'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg==',
+          };
           response = await myAPI(
             'POST',
-            'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
+            'https://mf.moamc.com/ums/api/SaveLead/create-leads',
+            // 'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
             objreq,
             headers,
           );
         } else if (window.location.href.includes('motilal-oswal-amc.aem.live')) {
+          headers = {
+            'Content-Type': 'application/json',
+            'X-Encrypted': 'N',
+            appid: generateAppId(),
+            'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg==',
+          };
           response = await myAPI(
             'POST',
             // 'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
@@ -388,7 +412,7 @@ export default function decorate(block) {
             objreq,
             headers,
           );
-        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/')) {
+        } else if (window.location.href.includes('https://www.motilaloswalwcs.com/') || window.location.href.includes('https://beta.motilaloswalwcs.com/')) {
           response = await myAPI(
             'POST',
             'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
@@ -396,6 +420,12 @@ export default function decorate(block) {
             headers,
           );
         } else {
+          headers = {
+            'Content-Type': 'application/json',
+            'X-Encrypted': 'N',
+            appid: generateAppId(),
+            'X-Lead-Encrypted': 't1n5Yx9iXgLru1uOVWfLE4BdVgWjGXPv4N0IWgSRy6kjggiYUbjEmg==',
+          };
           response = await myAPI(
             'POST',
             'https://www.motilaloswalmf.com/ums/api/SaveLead/create-leads',
