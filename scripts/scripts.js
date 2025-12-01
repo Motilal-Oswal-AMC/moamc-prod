@@ -20,7 +20,7 @@ import formBlock, { createForm } from '../blocks/form/form.js';
 // eslint-disable-next-line import/no-cycle
 import { initializeModalHandlers } from '../blocks/modal/modal.js';
 
-console.log('f1 code');
+// console.log('f1 code');
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
