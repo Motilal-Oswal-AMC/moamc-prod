@@ -1141,9 +1141,8 @@ main>.section.previous-studies-tab.tabs-container {
       line-height: var(--body-medium-semibold-line-height);
       margin: 0;
       border-radius: 8px;
-      // background-color: #2c2a96;
 
-      @include media(mobile) {
+      @include media (mobile) {
         height: 100%;
       } 
 
@@ -1237,17 +1236,7 @@ main>.section.previous-studies-tab.tabs-container {
         }
       }
     }
-
-    // .embed {
-    //   background-color: #2c2a96;
-
-    //   @include media(mobile) {
-    //     height: 160px;
-    //   }
-    // }
   }
-
-
 }
 
 @media only screen and (width <=767px) {
