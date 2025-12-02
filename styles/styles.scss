@@ -434,9 +434,16 @@ main img {
     height: auto;
 }
 
-main .previous-studies-ctn img{
+main .previous-studies-ctn img {
     width: 296px;
     height: 206px;
+
+}
+
+@media (width <=768px) {
+    main .previous-studies-ctn img {
+        height: 163px;
+    }
 }
 
 .icon {
@@ -1920,13 +1927,13 @@ main>.section.media-coverage .default-content-wrapper h6 {
 
 // .modal.block.coverage-image-modal .modal-content .default-content-wrapper p {
 
-.modal.block.coverage-image-modal .modal-content .section{
+.modal.block.coverage-image-modal .modal-content .section {
     margin: 0;
     background-color: var(--neutrals-white);
     border: 30px solid #fff;
 }
 
-.modal.block.coverage-image-modal .modal-content .section picture{
+.modal.block.coverage-image-modal .modal-content .section picture {
     line-height: 0;
     height: 100%;
     display: block;
