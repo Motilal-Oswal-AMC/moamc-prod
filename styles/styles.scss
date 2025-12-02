@@ -440,11 +440,11 @@ main .previous-studies-ctn img {
 
 }
 
-@media (width <=768px) {
-    main .previous-studies-ctn img {
-        height: 163px;
-    }
-}
+// @media (width <=768px) {
+//     main .previous-studies-ctn img {
+//         height: 163px;
+//     }
+// }
 
 .icon {
     display: inline-block;
@@ -554,6 +554,10 @@ footer .footer[data-block-status="loaded"] {
 
     main.noscroll {
         overflow: hidden;
+    }
+
+    main .previous-studies-ctn img {
+        height: 163px;
     }
 }
 
