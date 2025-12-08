@@ -118,22 +118,22 @@ const newSection = document.querySelector('.moedge-article-main .article-sub-lef
 
 (function injectMinimalGTM() {
   // --- Add external GTM script to HEAD ---
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NBBJHXVS';
-  document.head.appendChild(script);
+  // const script = document.createElement('script');
+  // script.async = true;
+  // script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NBBJHXVS';
+  // document.head.appendChild(script);
 
   // --- Add GTM noscript iframe to HEAD ---
-  const noscript = document.createElement('noscript');
-  const iframe = document.createElement('iframe');
+  // const noscript = document.createElement('noscript');
+  // const iframe = document.createElement('iframe');
 
-  iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS';
-  iframe.height = '0';
-  iframe.width = '0';
-  iframe.style.cssText = 'display:none;visibility:hidden';
+  // iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS';
+  // iframe.height = '0';
+  // iframe.width = '0';
+  // iframe.style.cssText = 'display:none;visibility:hidden';
 
-  noscript.appendChild(iframe);
-  document.head.insertBefore(noscript, document.head.firstChild);
+  // noscript.appendChild(iframe);
+  // document.head.insertBefore(noscript, document.head.firstChild);
 })();
 
 
