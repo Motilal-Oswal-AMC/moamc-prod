@@ -127,13 +127,13 @@ const newSection = document.querySelector('.moedge-article-main .article-sub-lef
   // const noscript = document.createElement('noscript');
   // const iframe = document.createElement('iframe');
 
-  iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS';
-  iframe.height = '0';
-  iframe.width = '0';
-  iframe.style.cssText = 'display:none;visibility:hidden';
+  // iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-NBBJHXVS';
+  // iframe.height = '0';
+  // iframe.width = '0';
+  // iframe.style.cssText = 'display:none;visibility:hidden';
 
-  noscript.appendChild(iframe);
-  document.head.insertBefore(noscript, document.head.firstChild);
+  // noscript.appendChild(iframe);
+  // document.head.insertBefore(noscript, document.head.firstChild);
 })();
 
 
